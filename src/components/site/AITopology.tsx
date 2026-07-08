@@ -240,7 +240,7 @@ export function AITopology() {
       <svg
         viewBox="0 0 120 120"
         preserveAspectRatio="xMidYMid meet"
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full overflow-visible"
         role="img"
         aria-label="Interactive knowledge graph of AI, computer vision, and engineering tools"
         onPointerMove={(e) => {
