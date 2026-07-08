@@ -1,0 +1,400 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Anchor scroll offset so section headings clear the fixed navbar. */
+section[id],
+footer[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Subtle arrival highlight after smooth scrolling to a section. */
+@keyframes arrivalFlash {
+  0% { opacity: 0.55; }
+  100% { opacity: 1; }
+}
+.arrival-flash {
+  animation: arrivalFlash 320ms ease-out both;
+}
+
+/*
+ * P S SURYANARAYANAN — Portfolio
+ * Dark-only, engineering-first, Nothing-OS / Apple / Linear-inspired.
+ * All tokens live here. Never use raw color classes in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-subtle: var(--subtle);
+  --color-hairline: var(--hairline);
+  --font-display: "Space Grotesk", "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-dot: "Silkscreen", "IBM Plex Mono", ui-monospace, monospace;
+  --font-jp: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+:root {
+  --radius: 1.25rem; /* 20px cards */
+  color-scheme: dark;
+
+  --background: oklch(0 0 0);            /* #000000 */
+  --foreground: oklch(1 0 0);            /* #FFFFFF */
+  --card: oklch(0.145 0 0);              /* ~#0A0A0A */
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(1 0 0);
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.78 0 0);          /* readable gray for text-secondary */
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.78 0 0);   /* ~#B8B8B8 */
+  --subtle: oklch(0.66 0 0);              /* ~#8A8A8A, readable on #000 */
+  --accent: oklch(0.22 0 0);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.24 0 0);              /* ~#202020 */
+  --hairline: oklch(1 0 0 / 8%);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(1 0 0 / 40%);
+  --chart-1: oklch(0.9 0 0);
+  --chart-2: oklch(0.7 0 0);
+  --chart-3: oklch(0.5 0 0);
+  --chart-4: oklch(0.35 0 0);
+  --chart-5: oklch(0.22 0 0);
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(1 0 0);
+  --sidebar-primary-foreground: oklch(0 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.24 0 0);
+  --sidebar-ring: oklch(1 0 0 / 40%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+@utility font-dot {
+  font-family: var(--font-dot);
+  letter-spacing: 0.02em;
+}
+
+@utility hairline {
+  border-color: var(--color-hairline);
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 1360px;
+  padding-inline: 1.5rem;
+}
+
+@utility text-secondary {
+  color: var(--color-muted-foreground);
+}
+
+@utility text-subtle {
+  color: var(--color-subtle);
+}
+
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding-inline: 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+@utility btn-primary {
+  background: var(--color-foreground);
+  color: var(--color-background);
+  border-color: var(--color-foreground);
+  &:hover {
+    background: transparent;
+    color: var(--color-foreground);
+  }
+}
+
+@utility btn-ghost {
+  background: transparent;
+  color: var(--color-foreground);
+  &:hover {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    border-color: var(--color-foreground);
+  }
+}
+
+@utility card-surface {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms;
+  &:hover {
+    transform: translateY(-2px);
+    border-color: oklch(1 0 0 / 25%);
+  }
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@utility animate-blink {
+  animation: blink 1.05s steps(1) infinite;
+}
+
+@utility animate-fade-up {
+  animation: fade-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-fade-in {
+  animation: fade-in 600ms ease-out both;
+}
+
+@keyframes segment-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.segment-breathe {
+  animation: segment-breathe 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segment-breathe { animation: none; }
+}
+
+@keyframes availability-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@utility availability-breathe {
+  animation: availability-breathe 4.5s ease-in-out infinite;
+}
+
+@keyframes topology-float {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(2px, -2px); }
+  66% { transform: translate(-1px, 2px); }
+}
+
+@utility topology-float {
+  animation: topology-float 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .availability-breathe { animation: none; }
+  .topology-float { animation: none; }
+}
+
+/* ============================================================
+ * Custom cursor — topology node style
+ * ============================================================ */
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+  /* Preserve native cursor on text/input surfaces */
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor [contenteditable="true"],
+  html.has-custom-cursor code,
+  html.has-custom-cursor pre {
+    cursor: auto;
+  }
+}
+
+.cursor-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 180ms ease-out;
+  contain: strict;
+}
+.cursor-root[data-hidden="true"] {
+  opacity: 0;
+}
+
+.cursor-ring,
+.cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform, width, height, opacity;
+  transform: translate3d(-100px, -100px, 0);
+  pointer-events: none;
+}
+
+.cursor-ring {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: transparent;
+  transition:
+    width 200ms ease-out,
+    height 200ms ease-out,
+    margin 200ms ease-out,
+    border-color 200ms ease-out,
+    opacity 200ms ease-out;
+}
+
+.cursor-dot {
+  width: 2px;
+  height: 2px;
+  margin: -1px 0 0 -1px;
+  border-radius: 9999px;
+  background: #ffffff;
+}
+
+.cursor-root[data-hover="true"] .cursor-ring {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.cursor-root[data-down="true"] .cursor-ring {
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.cursor-ripple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+  z-index: 9998;
+  animation: cursor-ripple 260ms ease-out forwards;
+}
+
+@keyframes cursor-ripple {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(3.2); opacity: 0;   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring,
+  .cursor-dot {
+    transition: none;
+  }
+  .cursor-ripple {
+    display: none;
+  }
+}
