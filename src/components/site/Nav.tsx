@@ -112,7 +112,7 @@ export function Nav() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-2.5 md:flex md:mx-8">
+        <nav className="hidden items-center gap-3.5 md:flex md:mx-10">
           {nav.map((item) => {
             const isActive = pathname === "/" && activeId === item.hash;
             return (
@@ -125,8 +125,8 @@ export function Nav() {
                 }}
                 data-active={isActive ? "true" : undefined}
                 className={[
-                  "group relative rounded-full px-3.5 py-1.5 text-[14px] transition-colors hover:text-foreground",
-                  isActive ? "text-foreground" : "text-secondary",
+                  "group relative rounded-full px-3.5 py-1.5 text-[15px] font-medium transition-colors hover:text-foreground",
+                  isActive ? "text-foreground" : "text-foreground/90",
                 ].join(" ")}
               >
                 {item.label}
