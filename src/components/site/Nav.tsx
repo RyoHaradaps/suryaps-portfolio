@@ -7,18 +7,58 @@ import { smoothScrollToId } from "@/lib/smooth-scroll";
 
 const SECTION_IDS = ["about", "projects", "experience", "skills", "contact"];
 
+function getSegmentedPattern(hash: string): string {
+  const len = hash.length;
+  let w = 14;
+  let cap = 8;
+  if (len < 6) { // e.g. "about"
+    w = 10;
+    cap = 6;
+  } else if (len > 9) { // e.g. "experience"
+    w = 18;
+    cap = 10;
+  }
+  return `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='${w}' height='2'%3E%3Crect x='0' y='0' width='${cap}' height='2' rx='1' fill='white'/%3E%3C/svg%3E")`;
+}
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [delayedActiveId, setDelayedActiveId] = useState<string | null>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDelayedActiveId(activeId);
+    }, 120);
+    return () => clearTimeout(timer);
+  }, [activeId]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    let timeoutId: number;
+    const handleScroll = () => {
+      setIsScrolling(true);
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        setIsScrolling(false);
+      }, 400);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => setOpen(false), [pathname]);
@@ -87,6 +127,9 @@ export function Nav() {
 
   return (
     <header
+      style={{
+        "--capsule-duration": isScrolling ? "1.8s" : "2.2s",
+      } as React.CSSProperties}
       className={[
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
@@ -114,7 +157,7 @@ export function Nav() {
 
         <nav className="hidden items-center gap-3.5 md:flex md:mx-10">
           {nav.map((item) => {
-            const isActive = pathname === "/" && activeId === item.hash;
+            const isActive = pathname === "/" && delayedActiveId === item.hash;
             return (
               <a
                 key={item.hash}
@@ -131,9 +174,19 @@ export function Nav() {
               >
                 {item.label}
                 <span
+                  style={
+                    isActive
+                      ? ({
+                          backgroundImage: getSegmentedPattern(item.hash),
+                          backgroundRepeat: "repeat-x",
+                        } as React.CSSProperties)
+                      : undefined
+                  }
                   className={[
-                    "pointer-events-none absolute inset-x-3.5 -bottom-0.5 h-px origin-left bg-foreground transition-transform duration-300 group-hover:scale-x-100",
-                    isActive ? "scale-x-100" : "scale-x-0",
+                    "pointer-events-none absolute inset-x-3.5 -bottom-0.5 origin-left transition-all duration-300",
+                    isActive
+                      ? "h-[2px] opacity-[0.92] scale-x-100 active-signal-line"
+                      : "h-px bg-foreground scale-x-0 group-hover:scale-x-100 opacity-0 group-hover:opacity-100",
                   ].join(" ")}
                 />
               </a>

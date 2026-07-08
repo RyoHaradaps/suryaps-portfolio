@@ -398,3 +398,24 @@ footer[id] {
     display: none;
   }
 }
+
+@keyframes capsuleFlow {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 1260px 0px;
+  }
+}
+
+.active-signal-line {
+  animation: capsuleFlow var(--capsule-duration, 2.2s) linear infinite;
+  transition: animation-duration 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 130ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .active-signal-line {
+    animation: none !important;
+  }
+}
+
