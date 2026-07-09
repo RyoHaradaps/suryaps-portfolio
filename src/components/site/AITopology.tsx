@@ -22,27 +22,27 @@ const NODES: NodeDef[] = [
   { id: "ml", label: "Machine Learning", x: 60, y: 60, r: 2.6, tier: 0 },
 
   // Core pillars (glow + white text like ML)
-  { id: "cv", label: "Computer Vision", x: 35, y: 47, r: 2, tier: 0 },
+  { id: "cv", label: "Computer Vision", x: 35, y: 50, r: 2, tier: 0 },
   { id: "dl", label: "Deep Learning", x: 78.8, y: 45, r: 2, tier: 0 },
   { id: "ai", label: "Artificial Intelligence", x: 60, y: 24, r: 2, tier: 0 },
   { id: "ds", label: "Data Science", x: 60, y: 96, r: 2, tier: 0 },
-  { id: "fs", label: "Full Stack", x: 26.4, y: 84, r: 2, tier: 1 },
+  { id: "fs", label: "Full Stack", x: 30, y: 82, r: 2, tier: 1 },
 
   // Tools — CV cluster (left)
   { id: "opencv", label: "OpenCV", x: 21, y: 32, tier: 2 },
-  { id: "mediapipe", label: "MediaPipe", x: 12.0, y: 52, tier: 2 },
   { id: "lbph", label: "LBPH", x: 7.2, y: 35, tier: 2 },
 
   // Tools — DL cluster (right)
   { id: "pytorch", label: "PyTorch", x: 105.6, y: 32, tier: 2 },
-  { id: "tensorflow", label: "TensorFlow", x: 115, y: 50, tier: 2 },
+  { id: "tensorflow", label: "TensorFlow", x: 110, y: 55, tier: 2 },
+  { id: "mediapipe", label: "MediaPipe", x: 115, y: 65, tier: 2 },
   { id: "attention", label: "Attention", x: 98.4, y: 20, tier: 2 },
   { id: "lstm", label: "LSTM", x: 115, y: 22, tier: 2 },
   { id: "bilstm", label: "BiLSTM", x: 115.2, y: 39, tier: 2 },
   { id: "temporal", label: "Temporal Attn", x: 90, y: 12, tier: 2 },
 
   // Tools — DS / ML shared
-  { id: "python", label: "Python", x: 60, y: 46, tier: 2 },
+  { id: "python", label: "Python", x: 60, y: 44, tier: 2 },
   { id: "numpy", label: "NumPy", x: 40.8, y: 30, tier: 2 },
   { id: "sklearn", label: "Scikit-Learn", x: 79.2, y: 30, tier: 2 },
   { id: "streamlit", label: "Streamlit", x: 28.0, y: 18, tier: 2 },
@@ -50,12 +50,12 @@ const NODES: NodeDef[] = [
   // Full-stack cluster (bottom-left)
   { id: "django", label: "Django", x: 36.0, y: 95, tier: 2 },
   { id: "rest", label: "REST APIs", x: 16.8, y: 94, tier: 2 },
-  { id: "sqlite", label: "SQLite", x: 9.6, y: 74, tier: 2 },
+  { id: "sqlite", label: "SQLite", x: 4, y: 72, tier: 2 },
   { id: "mysql", label: "MySQL", x: 26.4, y: 108, tier: 2 },
   { id: "bootstrap", label: "Bootstrap", x: 45.6, y: 108, tier: 2 },
-  { id: "tailwind", label: "Tailwind", x: 55.2, y: 82, tier: 2 },
+  { id: "tailwind", label: "Tailwind", x: 50, y: 82, tier: 2 },
   { id: "tkinter", label: "Tkinter", x: 9.6, y: 100, tier: 2 },
-  { id: "reportlab", label: "ReportLab", x: 4.8, y: 85, tier: 2 },
+  { id: "reportlab", label: "ReportLab", x: 4.8, y: 83, tier: 2 },
 
   // Data / infra (bottom-right)
   { id: "git", label: "Git", x: 86.4, y: 96, tier: 2 },
@@ -64,7 +64,7 @@ const NODES: NodeDef[] = [
 
   // Projects (hover targets)
   { id: "agroscan", label: "AgroScan", x: 81.6, y: 62, r: 1.8, tier: 1 },
-  { id: "movielist", label: "MyMovieList", x: 40, y: 66, r: 1.8, tier: 1 },
+  { id: "movielist", label: "MyMovieList", x: 43, y: 66, r: 1.8, tier: 1 },
   { id: "attendance", label: "Attendance", x: 12.0, y: 62, r: 1.8, tier: 1 },
   { id: "sign", label: "Sign Language", x: 88.8, y: 78, r: 1.8, tier: 1 },
 ];
@@ -127,6 +127,8 @@ const EDGES: Edge[] = [
 
   // Projects
   ["agroscan", "pytorch"],
+  ["agroscan", "tensorflow"],
+  ["agroscan", "python"],
   ["agroscan", "opencv"],
   ["agroscan", "numpy"],
   ["agroscan", "attention"],
@@ -135,12 +137,14 @@ const EDGES: Edge[] = [
   ["agroscan", "dl"],
 
   ["movielist", "django"],
+  ["movielist","python"],
   ["movielist", "rest"],
   ["movielist", "sqlite"],
   ["movielist", "bootstrap"],
   ["movielist", "tailwind"],
   ["movielist", "fs"],
 
+  ["attendance", "python"],
   ["attendance", "opencv"],
   ["attendance", "lbph"],
   ["attendance", "tkinter"],
@@ -149,6 +153,8 @@ const EDGES: Edge[] = [
   ["attendance", "cv"],
 
   ["sign", "mediapipe"],
+  ["sign", "python"],
+  ["sign", "pytorch"],
   ["sign", "bilstm"],
   ["sign", "temporal"],
   ["sign", "python"],
