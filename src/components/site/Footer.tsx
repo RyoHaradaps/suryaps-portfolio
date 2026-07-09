@@ -1,45 +1,29 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer id="contact" className="border-t border-border scroll-mt-24">
-      <div className="container-page py-16 md:py-20">
-        <div className="grid grid-cols-2 gap-12 md:pl-8 lg:pl-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-page py-20 md:py-28">
+        <div className="grid grid-cols-2 gap-y-16 gap-x-12 md:px-8 lg:px-12 md:grid-cols-[2fr_1fr] md:gap-x-16 lg:gap-x-20">
           <div className="col-span-2 md:col-span-1">
-            <p className="font-dot text-xs text-subtle">// BUILT WITH INTENT</p>
-            <p className="mt-4 max-w-md font-display text-xl font-light leading-snug text-foreground md:text-2xl">
+            <p className="font-dot text-[11px] md:text-[12px] tracking-widest text-subtle">// BUILT WITH INTENT</p>
+            <p className="mt-4 max-w-xl font-display text-[32px] sm:text-[38px] md:text-[44px] leading-[1.15] font-medium text-foreground">
               Engineered with curiosity.
               <br />
               Designed with restraint.
             </p>
-            <p className="mt-4 max-w-md text-sm text-secondary">
-              No template. No frameworks doing the thinking for me. Every pixel decided on purpose.
+            <p className="mt-4 max-w-2xl text-[16px] md:text-[18px] leading-relaxed md:leading-[1.65] text-secondary">
+              No template. No frameworks doing the thinking for me.
+              <br />
+              Every pixel decided on purpose.
             </p>
           </div>
 
-          <div className="md:pl-6 lg:pl-8">
-
-            <p className="font-dot text-xs text-subtle">// NAVIGATE</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li>
-                <Link to="/" className="text-secondary hover:text-foreground">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="text-secondary hover:text-foreground">
-                  Projects
-                </Link>
-              </li>
-            </ul>
-
-          </div>
-
           <div>
-            <p className="font-dot text-xs text-subtle">// ELSEWHERE</p>
-            <ul className="mt-4 space-y-2 text-sm">
+            <p className="font-dot text-[11px] md:text-[12px] tracking-widest text-subtle">// ELSEWHERE</p>
+            <ul className="mt-4 space-y-3 text-[16px] md:text-[18px]">
               <li>
                 <a
                   href={site.github}
@@ -47,7 +31,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-secondary hover:text-foreground"
                 >
-                  <Github className="h-4 w-4" /> GitHub
+                  <Github className="h-[18px] w-[18px]" /> GitHub
                 </a>
               </li>
               <li>
@@ -57,7 +41,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-secondary hover:text-foreground"
                 >
-                  <Linkedin className="h-4 w-4" /> LinkedIn
+                  <Linkedin className="h-[18px] w-[18px]" /> LinkedIn
                 </a>
               </li>
               <li>
@@ -65,14 +49,22 @@ export function Footer() {
                   href={`mailto:${site.email}`}
                   className="inline-flex items-center gap-2 text-secondary hover:text-foreground"
                 >
-                  <Mail className="h-4 w-4" /> Email
+                  <Mail className="h-[18px] w-[18px]" /> Email
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+919023607811"
+                  className="inline-flex items-center gap-2 text-secondary hover:text-foreground"
+                >
+                  <Phone className="h-[18px] w-[18px]" /> +91 9023607811
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-subtle md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-[11px] md:text-[12px] text-subtle md:flex-row md:items-center">
           <span className="font-dot">© {new Date().getFullYear()} — P S SURYANARAYANAN · BENGALURU</span>
           <span className="font-dot self-end md:self-auto">v1.1 · SHIPPED WITH CARE</span>
         </div>
