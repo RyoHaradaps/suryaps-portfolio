@@ -22,10 +22,10 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-24 pb-24 md:pt-36 md:pb-44">
+      <section className="relative overflow-hidden pt-24 pb-24 md:pt-28 md:pb-44">
         <div className="absolute inset-0 grid-lines opacity-30" aria-hidden />
         <div className="container-page max-w-[1360px] relative">
-          <div className="mt-12 grid gap-12 md:grid-cols-[minmax(0,1.1fr)_1fr] md:items-center md:gap-16 lg:gap-20">
+          <div className="mt-8 grid gap-12 md:grid-cols-[minmax(0,1.1fr)_1fr] md:items-center md:gap-16 lg:gap-20">
             <div>
               <Reveal delay={40} className="mb-6">
                 <div className="inline-flex w-fit max-w-full min-h-9 h-auto items-center gap-2.5 px-0 md:px-0 md:w-auto md:whitespace-nowrap">
@@ -62,33 +62,33 @@ function Index() {
               </Reveal>
 
               <Reveal delay={240}>
-              <div className="mt-10 flex flex-wrap items-center gap-3">
-                <Link to="/projects" className="btn-base btn-primary text-base px-6 h-12 gap-2.5 transform hover:scale-[1.02] transition-transform duration-300">
-                  View projects <ArrowUpRight className="h-5 w-5" />
-                </Link>
-                <a
-                  href={site.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
-                >
-                  <Linkedin className="h-5 w-5" /> LinkedIn
-                </a>
-                <a
-                  href={site.resumeUrl}
-                  className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
-                >
-                  <Download className="h-5 w-5" /> Download resume
-                </a>
-                <a
-                  href={site.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
-                >
-                  <Github className="h-5 w-5" /> GitHub
-                </a>
-              </div>
+                <div className="mt-10 flex flex-wrap items-center gap-3">
+                  <Link to="/projects" className="btn-base btn-primary text-base px-6 h-12 gap-2.5 transform hover:scale-[1.02] transition-transform duration-300">
+                    View projects <ArrowUpRight className="h-5 w-5" />
+                  </Link>
+                  <a
+                    href={site.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
+                  >
+                    <Linkedin className="h-5 w-5" /> LinkedIn
+                  </a>
+                  <a
+                    href={site.resumeUrl}
+                    className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
+                  >
+                    <Download className="h-5 w-5" /> Download resume
+                  </a>
+                  <a
+                    href={site.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
+                  >
+                    <Github className="h-5 w-5" /> GitHub
+                  </a>
+                </div>
               </Reveal>
             </div>
 
