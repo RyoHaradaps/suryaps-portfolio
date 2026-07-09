@@ -63,8 +63,8 @@ export function ProjectCard({ project }: { project: Project }) {
           <a
             href={project.github}
             target="_blank"
-            rel="noreferrer"
-            aria-label={`${project.name} on GitHub`}
+            rel="noopener noreferrer"
+            aria-label={`View ${project.name} GitHub Repository`}
             className="grid h-10 w-10 place-items-center rounded-full border border-border text-secondary hover:border-foreground hover:text-foreground"
           >
             <Github className="h-5 w-5" />

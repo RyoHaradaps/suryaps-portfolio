@@ -118,7 +118,7 @@ export const projects: Project[] = [
       { label: "CBAM: Convolutional Block Attention Module", href: "https://arxiv.org/abs/1807.06521" },
       { label: "AlexNet, revisited", href: "https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html" },
     ],
-    github: "https://github.com/RyoHaradaps",
+    github: "https://github.com/RyoHaradaps/AgroScan-Leaf-Disease-Detection",
   },
   {
     slug: "mymovielist",
@@ -191,7 +191,7 @@ export const projects: Project[] = [
       "Import from Letterboxd / MAL / IMDb",
       "Migrate to PostgreSQL and add full-text search",
     ],
-    github: "https://github.com/RyoHaradaps",
+    github: "https://github.com/RyoHaradaps/MyMovieList",
   },
   {
     slug: "attendance-system",
@@ -265,7 +265,7 @@ export const projects: Project[] = [
       "Multi-camera coverage for larger briefings",
       "Roll-based access + audit log for HR",
     ],
-    github: "https://github.com/RyoHaradaps",
+    github: "https://github.com/RyoHaradaps/Attendance-Management-Using-Face-Recognition",
   },
   {
     slug: "sign-language-detector",
@@ -335,7 +335,7 @@ export const projects: Project[] = [
       "Sentence-level decoding",
       "Publishable ablation study on feature choice",
     ],
-    github: "https://github.com/RyoHaradaps",
+    github: "https://github.com/RyoHaradaps/sign-language-detector",
   },
 ];
 

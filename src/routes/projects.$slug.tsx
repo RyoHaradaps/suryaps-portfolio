@@ -80,7 +80,8 @@ function ProjectDetail() {
                 <a
                   href={project.github}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${project.name} GitHub Repository`}
                   className="btn-base btn-primary"
                 >
                   <Github className="h-4 w-4" /> View source
