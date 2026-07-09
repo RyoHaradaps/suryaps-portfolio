@@ -7,7 +7,7 @@ export function Footer() {
     <footer id="contact" className="border-t border-border scroll-mt-24">
       <div className="container-page py-20 md:py-28">
         <div className="grid grid-cols-2 gap-y-16 gap-x-12 md:px-8 lg:px-12 md:grid-cols-[2fr_1fr] md:gap-x-16 lg:gap-x-20">
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 md:col-span-1 md:pl-8 lg:pl-20">
             <p className="font-dot text-[11px] md:text-[12px] tracking-widest text-subtle">// BUILT WITH INTENT</p>
             <p className="mt-4 max-w-xl font-display text-[32px] sm:text-[38px] md:text-[44px] leading-[1.15] font-medium text-foreground">
               Engineered with curiosity.
