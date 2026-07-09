@@ -286,7 +286,7 @@ export function AITopology() {
             const isActive = active ? active.has(a) && active.has(b) : false;
             const dimmed = active && !isActive;
             const stroke = isActive ? "#8a8a8a" : "#2a2a2a";
-            const opacity = dimmed ? 0.15 : isActive ? 0.9 : 0.55;
+            const opacity = dimmed ? 0.12 : isActive ? 0.9 : 0.45;
             return (
               <line
                 key={i}
@@ -341,15 +341,16 @@ export function AITopology() {
                 <circle cx={n.cx} cy={n.cy} r={r} fill={fill} style={{ transition: "r 400ms, fill 400ms" }} />
                 {(n.tier !== 2 || isActive || !active) && (
                   <text
-                    x={n.cx + (n.x > 70 ? 2.5 : n.x < 50 ? -2.5 : 0)}
-                    y={n.cy - (n.r ? n.r + 1.2 : 2)}
+                    x={n.cx + (n.x > 70 ? 3.5 : n.x < 50 ? -3.5 : 0)}
+                    y={n.cy - (n.r ? n.r + 2.2 : 3.0)}
                     textAnchor={n.x > 70 ? "start" : n.x < 50 ? "end" : "middle"}
                     fill={isActive || n.tier === 0 ? "#ffffff" : "#8a8a8a"}
-                    fontSize={n.tier === 0 ? 3.0 : n.tier === 1 ? 2.5 : 2.1}
+                    fontSize={n.tier === 0 ? 3.0 : n.tier === 1 ? 2.7 : 2.4}
                     fontFamily="ui-monospace, SFMono-Regular, Menlo, monospace"
-                    letterSpacing="0.08"
+                    fontWeight={n.tier === 0 ? undefined : 500}
+                    letterSpacing={n.tier === 0 ? "0.08" : "0.10"}
                     style={{ transition: "fill 400ms, opacity 400ms" }}
-                    opacity={dimmed ? 0 : n.tier === 2 && !isActive ? 0.55 : 1}
+                    opacity={dimmed ? 0 : n.tier === 2 && !isActive ? 0.68 : 1}
                   >
                     {n.label}
                   </text>
