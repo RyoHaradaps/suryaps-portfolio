@@ -30,7 +30,7 @@ function Index() {
               <Reveal delay={40} className="mb-6">
                 <div className="inline-flex w-fit max-w-full min-h-9 h-auto items-center gap-2.5 px-0 md:px-0 md:w-auto md:whitespace-nowrap">
                   <span className="availability-breathe h-2.5 w-2.5 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
-                  <span className="font-dot text-[13px] font-medium uppercase tracking-[0.2em] text-foreground">
+                  <span className="font-dot text-[14px] md:text-[15px] font-medium uppercase tracking-[0.18em] text-foreground">
                     OPEN TO FULL-TIME • ML ENGINEER • ASSOCIATE DATA SCIENTIST • AI ENGINEER
                   </span>
                 </div>
@@ -286,7 +286,7 @@ function Index() {
 
                   <div className="grid gap-10 lg:grid-cols-[1fr_220px] lg:gap-12">
                     <div>
-                      <p className="font-dot text-[13px] uppercase tracking-widest text-subtle">{e.period}</p>
+                      <p className="font-dot text-sm font-medium uppercase tracking-widest text-white/80">{e.period}</p>
                       <h3 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-[-0.01em] text-foreground md:text-4xl">
                         {e.role}
                       </h3>
