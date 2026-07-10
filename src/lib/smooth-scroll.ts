@@ -1,4 +1,4 @@
-const NAV_OFFSET = 80;
+const EXTRA_SPACING = 28;
 
 function prefersReducedMotion() {
   if (typeof window === "undefined") return false;
@@ -18,9 +18,16 @@ export function smoothScrollToId(id: string, updateUrl = true) {
   const target = document.getElementById(id);
   if (!target) return;
   const el: HTMLElement = target;
+
+  const nav = document.querySelector("header");
+  const navHeight = nav?.getBoundingClientRect().height ?? 72;
+
   const targetY = Math.max(
     0,
-    el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET,
+    el.getBoundingClientRect().top +
+      window.scrollY -
+      navHeight -
+      EXTRA_SPACING,
   );
 
   if (updateUrl) {

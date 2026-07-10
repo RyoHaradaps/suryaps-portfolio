@@ -20,7 +20,7 @@ export function Section({
   return (
     <section id={id} className={`container-page py-28 md:py-40 lg:py-44 ${className}`}>
       {(eyebrow || title || description || action) && (
-        <header className="mb-10 flex flex-col gap-4 md:mb-14">
+        <header className="mb-4 flex flex-col gap-4 md:mb-6">
           {eyebrow && <p className="font-dot text-xs md:text-sm text-subtle">{eyebrow}</p>}
           <div className="grid gap-4 md:grid-cols-[1fr_auto] md:grid-rows-[auto_auto] md:items-start">
             {title && (
