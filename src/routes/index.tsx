@@ -111,7 +111,7 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <Section id="about" eyebrow="// 01 · ABOUT" title={<>Engineering first. Design aware. Curious by default.</>}>
+      <Section id="about" eyebrow="// 01 · ABOUT" title={<>Engineering first. Design aware.<br />Curious by default.</>}>
         {/* Mobile + Desktop: preserve existing layout */}
         <div className="grid gap-12 md:hidden lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
           <Reveal className="h-full">
