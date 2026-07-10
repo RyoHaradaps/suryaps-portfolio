@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { Section } from "@/components/site/Section";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects, projectCategories } from "@/lib/projects";
 
@@ -42,21 +41,19 @@ function ProjectsPage() {
   }, [q, cat]);
 
   return (
-    <>
-      <section className="pt-20 md:pt-28">
-        <div className="container-page">
-          <p className="font-dot text-sm text-subtle">// INDEX · PROJECTS</p>
-          <h1 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-8xl">
-            Selected work.
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-secondary lg:max-w-6xl">
-            Case studies from internships, research, and independent projects.
-            Every card opens a full engineering breakdown.
-          </p>
-        </div>
-      </section>
+    <section className="container-page pt-20 md:pt-28 pb-32">
+      <div>
+        <p className="font-dot text-sm text-subtle">// INDEX · PROJECTS</p>
+        <h1 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-8xl">
+          Selected work.
+        </h1>
+        <p className="mt-6 max-w-3xl text-xl text-secondary lg:max-w-6xl">
+          Case studies from internships, research, and independent projects.
+          Every card opens a full engineering breakdown.
+        </p>
+      </div>
 
-      <Section className="pt-10 md:pt-14">
+      <div className="mt-10 md:mt-12">
         <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="relative w-full lg:max-w-sm">
             <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-subtle" />
@@ -106,7 +103,7 @@ function ProjectsPage() {
             ))}
           </div>
         )}
-      </Section>
-    </>
+      </div>
+    </section>
   );
 }
