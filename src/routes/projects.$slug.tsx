@@ -29,8 +29,8 @@ export const Route = createFileRoute("/projects/$slug")({
     <div className="container-page pt-40 pb-24">
       <p className="font-dot text-[13px] text-subtle">// 0x0404</p>
       <h1 className="mt-6 font-display text-5xl font-light">Project not found.</h1>
-      <Link to="/projects" className="btn-base btn-primary mt-8">
-        Back to projects
+      <Link to="/" className="btn-base btn-primary mt-8">
+        Back to home
       </Link>
     </div>
   ),
@@ -47,10 +47,11 @@ function ProjectDetail() {
       <section className="pt-36 md:pt-48">
         <div className="container-page">
           <Link
-            to="/projects"
+            to="/"
+            hash="projects"
             className="inline-flex items-center gap-2 text-base text-secondary hover:text-foreground"
           >
-            <ArrowLeft className="h-4 w-4" /> All projects
+            <ArrowLeft className="h-4 w-4" /> Back to projects
           </Link>
           <div className="mt-12 flex items-center justify-between font-dot text-[13px] md:text-sm text-subtle">
             <span>CASE · {project.index}</span>
@@ -288,10 +289,6 @@ function ProjectDetail() {
                 </p>
                 <h3 className="mt-4 font-display text-3xl">{p.name}</h3>
                 <p className="mt-2 text-base text-secondary">{p.tagline}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-base text-foreground">
-                  Read case study
-                  <ArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </span>
               </Link>
             ))}
           </div>
@@ -323,11 +320,7 @@ function ProjectDetail() {
             <div className="mt-1 text-base text-secondary">{next.tagline}</div>
           </Link>
         </div>
-        <div className="mt-12 text-center">
-          <Link to="/projects" className="btn-base btn-ghost">
-            All projects <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
+
       </Section>
     </>
   );

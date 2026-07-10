@@ -31,7 +31,7 @@ function NotFoundComponent() {
         </p>
         <div className="mt-8 flex justify-center gap-3">
           <Link to="/" className="btn-base btn-primary">Return home</Link>
-          <Link to="/projects" className="btn-base btn-ghost">Browse projects</Link>
+          <Link to="/" hash="projects" className="btn-base btn-ghost">Browse projects</Link>
         </div>
       </div>
     </div>

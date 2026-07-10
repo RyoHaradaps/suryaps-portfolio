@@ -11,6 +11,7 @@ import { projects } from "@/lib/projects";
 import { skillGroups, experience } from "@/lib/skills";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { smoothScrollToId } from "@/lib/smooth-scroll";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -62,9 +63,16 @@ function Index() {
 
               <Reveal delay={240}>
                 <div className="mt-10 flex flex-wrap items-center gap-3">
-                  <Link to="/projects" className="btn-base btn-primary text-base px-6 h-12 gap-2.5 transform hover:scale-[1.02] transition-transform duration-300">
+                  <a
+                    href="#projects"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      smoothScrollToId("projects");
+                    }}
+                    className="btn-base btn-primary text-base px-6 h-12 gap-2.5 transform hover:scale-[1.02] transition-transform duration-300"
+                  >
                     View projects <ArrowUpRight className="h-5 w-5" />
-                  </Link>
+                  </a>
                   <a
                     href={site.linkedin}
                     target="_blank"
@@ -244,13 +252,6 @@ function Index() {
         eyebrow="// 02 · SELECTED WORK"
         title={<>Systems I've built.</>}
         description="A small set of the things I've shipped. Each opens a full engineering case study."
-        action={
-          <div className="md:mr-4 lg:mr-0">
-            <Link to="/projects" className="btn-base btn-ghost">
-              All projects <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        }
       >
         <div className="grid gap-8 md:grid-cols-2 md:gap-10">
           {featured.map((p, i) => (
