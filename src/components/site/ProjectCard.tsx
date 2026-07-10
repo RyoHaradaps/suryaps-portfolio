@@ -41,9 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {project.github && (
-          <div
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-secondary transition-colors hover:border-foreground hover:text-foreground"
-          >
+          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-secondary transition-colors hover:border-foreground hover:text-foreground">
             <Github className="h-5 w-5" />
           </div>
         )}

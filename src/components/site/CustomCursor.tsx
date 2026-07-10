@@ -22,13 +22,7 @@ const INTERACTIVE_SELECTOR = [
   ".btn-base",
 ].join(",");
 
-const TEXT_SELECTOR = [
-  "input",
-  "textarea",
-  "[contenteditable='true']",
-  "code",
-  "pre",
-].join(",");
+const TEXT_SELECTOR = ["input", "textarea", "[contenteditable='true']", "code", "pre"].join(",");
 
 export function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);

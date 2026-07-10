@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 
@@ -65,7 +64,9 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-[13px] text-subtle md:flex-row md:items-center">
-          <span className="font-dot">© {new Date().getFullYear()} — P S SURYANARAYANAN · BENGALURU</span>
+          <span className="font-dot">
+            © {new Date().getFullYear()} — P S SURYANARAYANAN · BENGALURU
+          </span>
           <span className="font-dot self-end md:self-auto">v1.1 · SHIPPED WITH CARE</span>
         </div>
       </div>

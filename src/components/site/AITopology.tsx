@@ -137,7 +137,7 @@ const EDGES: Edge[] = [
   ["agroscan", "dl"],
 
   ["movielist", "django"],
-  ["movielist","python"],
+  ["movielist", "python"],
   ["movielist", "rest"],
   ["movielist", "sqlite"],
   ["movielist", "bootstrap"],
@@ -342,8 +342,16 @@ export function AITopology() {
                 onMouseEnter={() => setHover(n.id)}
                 onMouseLeave={() => setHover((h) => (h === n.id ? null : h))}
               >
-                {n.tier === 0 && <circle cx={n.cx} cy={n.cy} r={8 + pulse * 2} fill="url(#coreGlow)" />}
-                <circle cx={n.cx} cy={n.cy} r={r} fill={fill} style={{ transition: "r 400ms, fill 400ms" }} />
+                {n.tier === 0 && (
+                  <circle cx={n.cx} cy={n.cy} r={8 + pulse * 2} fill="url(#coreGlow)" />
+                )}
+                <circle
+                  cx={n.cx}
+                  cy={n.cy}
+                  r={r}
+                  fill={fill}
+                  style={{ transition: "r 400ms, fill 400ms" }}
+                />
                 {(n.tier !== 2 || isActive || !active) && (
                   <text
                     x={n.cx + (n.x > 70 ? 3.5 : n.x < 50 ? -3.5 : 0)}
@@ -361,7 +369,13 @@ export function AITopology() {
                   </text>
                 )}
                 {/* Hit target */}
-                <circle cx={n.cx} cy={n.cy} r={Math.max(r + 2, 3)} fill="transparent" style={{ cursor: "pointer" }} />
+                <circle
+                  cx={n.cx}
+                  cy={n.cy}
+                  r={Math.max(r + 2, 3)}
+                  fill="transparent"
+                  style={{ cursor: "pointer" }}
+                />
               </g>
             );
           })}

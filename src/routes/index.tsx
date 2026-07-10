@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
 import portrait from "@/assets/Surya1.jpg";
 import { Section } from "@/components/site/Section";
@@ -30,7 +30,10 @@ function Index() {
             <div>
               <Reveal delay={40} className="mb-6">
                 <div className="inline-flex w-fit max-w-full min-h-9 h-auto items-center gap-2.5 px-0 md:px-0 md:w-auto md:whitespace-nowrap">
-                  <span className="availability-breathe h-2.5 w-2.5 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
+                  <span
+                    className="availability-breathe h-2.5 w-2.5 shrink-0 rounded-full bg-foreground"
+                    aria-hidden="true"
+                  />
                   <span className="font-dot text-[14px] md:text-[15px] font-medium uppercase tracking-[0.18em] text-foreground">
                     OPEN TO FULL-TIME • ML ENGINEER • ASSOCIATE DATA SCIENTIST • AI ENGINEER
                   </span>
@@ -39,8 +42,7 @@ function Index() {
 
               <Reveal delay={80}>
                 <h1 className="font-display text-[14vw] font-light leading-[0.95] tracking-[-0.04em] sm:text-[11vw] md:text-[7.5rem] lg:text-[9.5rem]">
-                  Hi. <span className="text-subtle">I'm</span>{" "}
-                  <br className="hidden md:block" />
+                  Hi. <span className="text-subtle">I'm</span> <br className="hidden md:block" />
                   Surya<span className="animate-blink text-foreground">_</span>
                 </h1>
               </Reveal>
@@ -119,7 +121,17 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <Section id="about" eyebrow="// 01 · ABOUT" title={<>Engineering first. Design aware.<br />Curious by default.</>}>
+      <Section
+        id="about"
+        eyebrow="// 01 · ABOUT"
+        title={
+          <>
+            Engineering first. Design aware.
+            <br />
+            Curious by default.
+          </>
+        }
+      >
         {/* Mobile + Desktop: preserve existing layout */}
         <div className="grid gap-12 md:hidden lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
           <Reveal className="h-full">
@@ -138,23 +150,24 @@ function Index() {
           <Reveal delay={120} className="h-full">
             <div className="flex h-full flex-col justify-between space-y-6 text-justify text-lg text-secondary md:text-xl md:leading-relaxed">
               <p>
-                I got into engineering the same way most people get into anything worth doing: curiosity that outgrew
-                the tutorials. Somewhere between building small tools and breaking large ones, I realised the
-                interesting work lives at the seam between a research idea and a product someone actually opens on a
-                Tuesday.
+                I got into engineering the same way most people get into anything worth doing:
+                curiosity that outgrew the tutorials. Somewhere between building small tools and
+                breaking large ones, I realised the interesting work lives at the seam between a
+                research idea and a product someone actually opens on a Tuesday.
               </p>
               <p>
-                Since then I've worked across <span className="text-foreground">deep learning</span>,{" "}
-                <span className="text-foreground">computer vision</span>, and{" "}
-                <span className="text-foreground">full stack Python</span> often in the same project. AgroScan started
-                as a leaf classifier and became a decision-support tool. An attendance system for a refinery had to
-                survive lighting, latency, and zero training budget. A movie tracker turned into a study in unifying
-                four external APIs behind one clean model.
+                Since then I've worked across <span className="text-foreground">deep learning</span>
+                , <span className="text-foreground">computer vision</span>, and{" "}
+                <span className="text-foreground">full stack Python</span> often in the same
+                project. AgroScan started as a leaf classifier and became a decision-support tool.
+                An attendance system for a refinery had to survive lighting, latency, and zero
+                training budget. A movie tracker turned into a study in unifying four external APIs
+                behind one clean model.
               </p>
               <p className="text-foreground">
-                I'm interested in intelligent systems for the long haul: perception, language, and the boring but
-                important engineering that makes them ship. I want to work with people who care about the last ten
-                percent as much as the first ninety.
+                I'm interested in intelligent systems for the long haul: perception, language, and
+                the boring but important engineering that makes them ship. I want to work with
+                people who care about the last ten percent as much as the first ninety.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-0 sm:flex sm:items-start sm:justify-between sm:gap-0">
@@ -175,7 +188,9 @@ function Index() {
                     >
                       <AnimatedCounter value={s.n} suffix={s.suffix} />
                     </div>
-                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">{s.l}</div>
+                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">
+                      {s.l}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -200,23 +215,24 @@ function Index() {
 
             <div className="space-y-6 text-justify text-lg text-secondary md:text-xl md:leading-relaxed">
               <p>
-                I got into engineering the same way most people get into anything worth doing: curiosity that outgrew
-                the tutorials. Somewhere between building small tools and breaking large ones, I realised the
-                interesting work lives at the seam between a research idea and a product someone actually opens on a
-                Tuesday.
+                I got into engineering the same way most people get into anything worth doing:
+                curiosity that outgrew the tutorials. Somewhere between building small tools and
+                breaking large ones, I realised the interesting work lives at the seam between a
+                research idea and a product someone actually opens on a Tuesday.
               </p>
               <p>
-                Since then I've worked across <span className="text-foreground">deep learning</span>,{" "}
-                <span className="text-foreground">computer vision</span>, and{" "}
-                <span className="text-foreground">full stack Python</span> often in the same project. AgroScan started
-                as a leaf classifier and became a decision-support tool. An attendance system for a refinery had to
-                survive lighting, latency, and zero training budget. A movie tracker turned into a study in unifying
-                four external APIs behind one clean model.
+                Since then I've worked across <span className="text-foreground">deep learning</span>
+                , <span className="text-foreground">computer vision</span>, and{" "}
+                <span className="text-foreground">full stack Python</span> often in the same
+                project. AgroScan started as a leaf classifier and became a decision-support tool.
+                An attendance system for a refinery had to survive lighting, latency, and zero
+                training budget. A movie tracker turned into a study in unifying four external APIs
+                behind one clean model.
               </p>
               <p className="clear-left text-foreground">
-                I'm interested in intelligent systems for the long haul: perception, language, and the boring but
-                important engineering that makes them ship. I want to work with people who care about the last ten
-                percent as much as the first ninety.
+                I'm interested in intelligent systems for the long haul: perception, language, and
+                the boring but important engineering that makes them ship. I want to work with
+                people who care about the last ten percent as much as the first ninety.
               </p>
 
               <div className="clear-left grid grid-cols-2 gap-4 pt-6 sm:flex sm:items-start sm:justify-between sm:gap-0">
@@ -237,7 +253,9 @@ function Index() {
                     >
                       <AnimatedCounter value={s.n} suffix={s.suffix} />
                     </div>
-                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">{s.l}</div>
+                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">
+                      {s.l}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -287,7 +305,9 @@ function Index() {
 
                   <div className="grid gap-10 lg:grid-cols-[1fr_220px] lg:gap-12">
                     <div>
-                      <p className="font-dot text-sm font-medium uppercase tracking-widest text-white/80">{e.period}</p>
+                      <p className="font-dot text-sm font-medium uppercase tracking-widest text-white/80">
+                        {e.period}
+                      </p>
                       <h3 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-[-0.01em] text-foreground md:text-4xl">
                         {e.role}
                       </h3>
@@ -297,7 +317,10 @@ function Index() {
                       <ul className="mt-8 space-y-5 text-lg text-secondary transition-colors duration-200 group-hover:text-foreground/90 md:text-xl md:leading-relaxed">
                         {e.bullets.map((b) => (
                           <li key={b} className="group flex items-start gap-4 leading-relaxed">
-                            <span className="relative mt-[0.65em] flex h-1 w-1 shrink-0" aria-hidden>
+                            <span
+                              className="relative mt-[0.65em] flex h-1 w-1 shrink-0"
+                              aria-hidden
+                            >
                               <span className="h-1 w-1 rounded-full bg-white/[0.55] transition-colors duration-200 group-hover:bg-white" />
                               <span className="absolute left-full top-1/2 h-px w-0 -translate-y-1/2 bg-white/40 transition-all duration-200 ease-out group-hover:w-3" />
                             </span>
@@ -324,11 +347,14 @@ function Index() {
                         <div className="grid grid-cols-3 gap-6 lg:grid-cols-1 lg:gap-12">
                           {e.metrics.map((m) => (
                             <div key={m.label} className="flex flex-col items-center lg:items-end">
-                              <div className={cn(
+                              <div
+                                className={cn(
                                   "font-display font-light leading-none tracking-[-0.02em] text-foreground md:text-5xl",
                                   m.label === "Export formats"
                                     ? "text-3xl md:text-4xl whitespace-nowrap"
-                                    : "text-4xl md:text-5xl")}>
+                                    : "text-4xl md:text-5xl",
+                                )}
+                              >
                                 {m.value}
                               </div>
                               <div className="mt-3 font-dot text-[13px] uppercase tracking-widest text-subtle">

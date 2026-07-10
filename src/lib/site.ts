@@ -23,4 +23,3 @@ export const nav: NavItem[] = [
   { label: "Stack", kind: "section", hash: "skills" },
   { label: "Contact", kind: "section", hash: "contact" },
 ];
-

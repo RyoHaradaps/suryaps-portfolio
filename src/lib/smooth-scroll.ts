@@ -25,10 +25,7 @@ export function smoothScrollToId(id: string, updateUrl = true) {
 
   const targetY = Math.max(
     0,
-    el.getBoundingClientRect().top +
-      window.scrollY -
-      navHeight +
-      OPTICAL_OFFSET,
+    el.getBoundingClientRect().top + window.scrollY - navHeight + OPTICAL_OFFSET,
   );
 
   if (updateUrl) {
@@ -52,8 +49,7 @@ export function smoothScrollToId(id: string, updateUrl = true) {
   }
   const duration = Math.min(800, Math.max(600, Math.abs(distance) * 0.6));
   const start = performance.now();
-  const ease = (t: number) =>
-    t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 
   function step(now: number) {
     const t = Math.min(1, (now - start) / duration);

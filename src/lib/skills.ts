@@ -15,12 +15,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Programming",
     caption: "Languages I use to build.",
-    items: [
-      { name: "Python" },
-      { name: "SQL" },
-      { name: "C / C++" },
-      { name: "JavaScript" },
-    ],
+    items: [{ name: "Python" }, { name: "SQL" }, { name: "C / C++" }, { name: "JavaScript" }],
   },
   {
     label: "AI / ML",
@@ -67,21 +62,12 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Databases",
     caption: "Where the data lives.",
-    items: [
-      { name: "MySQL" },
-      { name: "SQLite" },
-      { name: "MongoDB" },
-      { name: "Supabase" },
-    ],
+    items: [{ name: "MySQL" }, { name: "SQLite" }, { name: "MongoDB" }, { name: "Supabase" }],
   },
   {
     label: "Data Analytics",
     caption: "Turning data into insights.",
-    items: [
-      { name: "Pandas" },
-      { name: "Tableau" },
-      { name: "Power BI" },
-    ],
+    items: [{ name: "Pandas" }, { name: "Tableau" }, { name: "Power BI" }],
   },
   {
     label: "Developer Tools",
@@ -97,12 +83,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Currently Exploring",
     caption: "Expanding my engineering toolkit.",
-    items: [
-      { name: "Docker" },
-      { name: "FastAPI" },
-      { name: "ONNX" },
-      { name: "Transformers" },
-    ],
+    items: [{ name: "Docker" }, { name: "FastAPI" }, { name: "ONNX" }, { name: "Transformers" }],
   },
 ];
 

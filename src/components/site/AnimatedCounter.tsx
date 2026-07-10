@@ -12,9 +12,7 @@ export function AnimatedCounter({
   const ref = useRef<HTMLSpanElement>(null);
   const numeric = typeof value === "number" ? value : Number(value);
   const isNumber = Number.isFinite(numeric);
-  const [display, setDisplay] = useState<string>(
-    isNumber ? "0" : String(value),
-  );
+  const [display, setDisplay] = useState<string>(isNumber ? "0" : String(value));
 
   useEffect(() => {
     if (!isNumber) return;

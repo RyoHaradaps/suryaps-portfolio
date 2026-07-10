@@ -9,6 +9,7 @@ This report outlines the structural, stylistic, and architectural layout of the 
 The portfolio is structured as a modern Single Page Application (SPA) with Server-Side Rendering (SSR) capabilities built on **TanStack Start** (React 19, Vite, TanStack Router, and Nitro).
 
 ### Folder Structure
+
 ```
 Surya's Portfolio/
 ├── e2e/                             # Playwright regression tests
@@ -46,7 +47,9 @@ Surya's Portfolio/
 ```
 
 ### Routing & Navigation
+
 Routing is powered by `@tanstack/react-router` which generates static-types for all routes:
+
 - `/` - Main landing page showcasing Hero, AITopology, About, Featured Projects, Experience, and Stack/Skills.
 - `/projects` - Complete catalog page with client-side category filters and live text queries.
 - `/projects/$slug` - Deep engineering case studies presenting objectives, workflows, challenges, code implementation details, decision matrices, tradeoffs, and outcomes.
@@ -59,7 +62,9 @@ Routing is powered by `@tanstack/react-router` which generates static-types for 
 The visual styling follows an engineering-centric, high-contrast, dark-mode-only aesthetic reminiscent of Apple, Nothing OS, and Linear interfaces.
 
 ### Color Palette (OKLCH Tokens)
+
 The theme configuration utilizes `oklch` syntax in `src/styles.css` for precision gradients and contrast preservation:
+
 - **Background**: `oklch(0 0 0)` (Pure Black)
 - **Foreground**: `oklch(1 0 0)` (Pure White)
 - **Card Fill**: `oklch(0.145 0 0)` (Dark Charcoal)
@@ -68,7 +73,9 @@ The theme configuration utilizes `oklch` syntax in `src/styles.css` for precisio
 - **Borders**: `oklch(0.24 0 0)` (Subtle outlines separating containers)
 
 ### Typography Hierarchy
+
 Custom typography utilizes five Google Font families:
+
 1. **Display** (`Space Grotesk`): Wide, clean geometric headings with custom letter-spacing (`tracking-[-0.03em]`).
 2. **Sans** (`Inter`): High legibility default text with optimized font features (`ss01`, `cv11`).
 3. **Mono** (`IBM Plex Mono`): Technical code snippets, parameters, and metadata values.
@@ -76,11 +83,13 @@ Custom typography utilizes five Google Font families:
 5. **JP** (`Noto Sans JP`): Clean Japanese translations inside Logo structures.
 
 ### Spacing & Borders
+
 - **Spacing**: Rigid spacing increments (`py-24 md:py-32`) establishing balanced negative space.
 - **Border Radius**: Structured radii based on variables: `--radius: 1.25rem` (20px) for container cards and `9999px` for pill badges/buttons.
 - **Grids**: Overlayed grid lines pattern (`grid-lines`) masked with radial gradients to define sections.
 
 ### Motion Principles & Hover Interactions
+
 - **Custom Cursor**: A floating 12px SVG ring and 2px dot utilizing `requestAnimationFrame` coordinate easing. It swells over interactive items, displays clicks through ripple scaling, and hides when entering inputs/code fields.
 - **Scroll Spy & Anchors**: Anchor elements smoothly scroll with custom cubic-bezier math (`duration = Math.min(800, Math.max(600, Math.abs(distance) * 0.6))`) and flash sections upon arrival via an animation scale keyframe.
 - **AITopology Animation**: SVG network utilizing coordinate sine oscillations to emulate living, floating knowledge.
@@ -107,13 +116,13 @@ graph TD
     Hero --> AITopology[AITopology]
     Hero --> MobileTopology[MobileTopologyFragment]
     Hero --> Reveal[Reveal]
-    
+
     Index --> AboutSection[About Section]
     AboutSection --> AnimatedCounter[AnimatedCounter]
-    
+
     Index --> SelectedWork[Selected Work Section]
     SelectedWork --> ProjectCard1[ProjectCard]
-    
+
     Index --> ExperienceSection[Experience Section]
     Index --> StackSection[Stack Section]
 
@@ -141,47 +150,51 @@ graph TD
 ## 5. Potential Improvements
 
 ### Low Risk
-* **Standardize `prefers-reduced-motion` Helpers**: Currently, the helper function `prefersReducedMotion` is duplicated across both `AITopology.tsx` and `smooth-scroll.ts`. Consolidating this into a shared helper in `src/lib/utils.ts` would improve maintenance.
-* **Typing consistency in Navigation Callback**: In `src/components/site/Nav.tsx`, the `navigate` function has `void navigate(...)` which is fine but could be handled with standard React Router typings instead.
-* **AITopology Scale Precision**: The viewport mapping clientside Clientspace client coordinates (`clientX`, `clientY`) to viewBox coordinates (100x120) could benefit from standard responsive size detection to make the pointer hover zone perfectly accurate across all screen sizes.
+
+- **Standardize `prefers-reduced-motion` Helpers**: Currently, the helper function `prefersReducedMotion` is duplicated across both `AITopology.tsx` and `smooth-scroll.ts`. Consolidating this into a shared helper in `src/lib/utils.ts` would improve maintenance.
+- **Typing consistency in Navigation Callback**: In `src/components/site/Nav.tsx`, the `navigate` function has `void navigate(...)` which is fine but could be handled with standard React Router typings instead.
+- **AITopology Scale Precision**: The viewport mapping clientside Clientspace client coordinates (`clientX`, `clientY`) to viewBox coordinates (100x120) could benefit from standard responsive size detection to make the pointer hover zone perfectly accurate across all screen sizes.
 
 ### Medium Risk
-* **Search Input Optimization**: In `src/routes/projects.tsx`, the search query filters projects on every keystroke. Although the project count is small (~4 items), as the count grows, a simple debounced search mechanism would avoid unnecessary re-renders.
-* **Contact Form Fallback**: The contact links in the header and footer (`mailto:suryanarayananps2005@gmail.com`) could be supported by an on-site, serverless or clientside simple email form to improve conversion.
-* **Missing Resume File**: The navigation and footer link points to `/resume.pdf`, which does not exist in the public folder. Users will encounter a 404 error if they attempt to download the resume.
+
+- **Search Input Optimization**: In `src/routes/projects.tsx`, the search query filters projects on every keystroke. Although the project count is small (~4 items), as the count grows, a simple debounced search mechanism would avoid unnecessary re-renders.
+- **Contact Form Fallback**: The contact links in the header and footer (`mailto:suryanarayananps2005@gmail.com`) could be supported by an on-site, serverless or clientside simple email form to improve conversion.
+- **Missing Resume File**: The navigation and footer link points to `/resume.pdf`, which does not exist in the public folder. Users will encounter a 404 error if they attempt to download the resume.
 
 ### High Risk
-* **Router/Query client context caching**: In `src/router.tsx`, `QueryClient` is initialized inside the `getRouter` factory function. In some SSR build paths, instantiating a fresh client inside router wrappers can lead to state mismatch or duplicate fetch streams on hydrate if query results are not fully hydrated. Keeping the initialization outside or caching it solves hydration issues.
+
+- **Router/Query client context caching**: In `src/router.tsx`, `QueryClient` is initialized inside the `getRouter` factory function. In some SSR build paths, instantiating a fresh client inside router wrappers can lead to state mismatch or duplicate fetch streams on hydrate if query results are not fully hydrated. Keeping the initialization outside or caching it solves hydration issues.
 
 ---
 
 ## 6. Technical Debt
 
-* **Local JSON Metadata**: The project uses static arrays (`projects` and `experience`) defined in TypeScript files (`src/lib/projects.ts` and `src/lib/skills.ts`). This is great for performance, but adds code weight. If content grows significantly, it could be separated into clean static JSON files or markdown files parsed at build-time.
-* **CSS Override Overrides**: Tailwind CSS v4 handles variants differently. The `@custom-variant dark (&:is(.dark *));` is defined but the app utilizes a hardcoded dark layout standard, making some dark variant declarations redundant.
+- **Local JSON Metadata**: The project uses static arrays (`projects` and `experience`) defined in TypeScript files (`src/lib/projects.ts` and `src/lib/skills.ts`). This is great for performance, but adds code weight. If content grows significantly, it could be separated into clean static JSON files or markdown files parsed at build-time.
+- **CSS Override Overrides**: Tailwind CSS v4 handles variants differently. The `@custom-variant dark (&:is(.dark *));` is defined but the app utilizes a hardcoded dark layout standard, making some dark variant declarations redundant.
 
 ---
 
 ## 7. Performance Review
 
-* **Asset Lazy Loading**: Images (such as `portrait` in `index.tsx`) use `loading="lazy"`. However, since the portrait image is located near the top of the page (in the About section, which is immediately visible on smaller desktop/tablet viewports), this might trigger a minor LCP (Largest Contentful Paint) delay. Removing `lazy` loading for elements above the fold would optimize initial render speed.
-* **SVG Complexity**: The `AITopology` component contains 70 nodes and 58 edges. Rendering these dynamically via React state ticking updates coordinates on every frame, which can cause minor layout tasks. Since elements only float by ~0.5 units, this floating could be offloaded to pure CSS translations using custom properties, leaving React to only handle mouse hovers.
+- **Asset Lazy Loading**: Images (such as `portrait` in `index.tsx`) use `loading="lazy"`. However, since the portrait image is located near the top of the page (in the About section, which is immediately visible on smaller desktop/tablet viewports), this might trigger a minor LCP (Largest Contentful Paint) delay. Removing `lazy` loading for elements above the fold would optimize initial render speed.
+- **SVG Complexity**: The `AITopology` component contains 70 nodes and 58 edges. Rendering these dynamically via React state ticking updates coordinates on every frame, which can cause minor layout tasks. Since elements only float by ~0.5 units, this floating could be offloaded to pure CSS translations using custom properties, leaving React to only handle mouse hovers.
 
 ---
 
 ## 8. Accessibility Review (a11y)
 
-* **Contrast Ratio**: The design is dark-mode-only and uses white text (`oklch(1 0 0)`) on a black background (`oklch(0 0 0)`), which provides excellent contrast. However, elements using `--color-subtle` (`oklch(0.66 0 0)`) on a black background have a contrast ratio of roughly 4.2:1. WCAG AA standards require 4.5:1 for normal text, meaning small subheadings/captions could be slightly adjusted for readability.
-* **Custom Cursor Focus/Tab Traversal**: The custom cursor overrides pointer icons on hover. However, users traversing the website via a keyboard do not trigger cursor mouse movement events, meaning interactive custom styles do not apply. Screen reader indicators for keyboard focus state should be verified.
-* **Icon labels**: Icons like `Github` and `Linkedin` inside buttons/links should contain explicit `aria-label` text when they do not accompany plain text (e.g., in the header) to support assistive technologies.
+- **Contrast Ratio**: The design is dark-mode-only and uses white text (`oklch(1 0 0)`) on a black background (`oklch(0 0 0)`), which provides excellent contrast. However, elements using `--color-subtle` (`oklch(0.66 0 0)`) on a black background have a contrast ratio of roughly 4.2:1. WCAG AA standards require 4.5:1 for normal text, meaning small subheadings/captions could be slightly adjusted for readability.
+- **Custom Cursor Focus/Tab Traversal**: The custom cursor overrides pointer icons on hover. However, users traversing the website via a keyboard do not trigger cursor mouse movement events, meaning interactive custom styles do not apply. Screen reader indicators for keyboard focus state should be verified.
+- **Icon labels**: Icons like `Github` and `Linkedin` inside buttons/links should contain explicit `aria-label` text when they do not accompany plain text (e.g., in the header) to support assistive technologies.
 
 ---
 
 ## 9. Final Understanding
 
-The portfolio of P S Suryanarayanan is an engineering-first, minimal showcase of machine learning, computer vision, and full stack systems. 
+The portfolio of P S Suryanarayanan is an engineering-first, minimal showcase of machine learning, computer vision, and full stack systems.
 
 The site's philosophy is strictly reflected in the code:
+
 - **Typography First**: Heavy use of custom fonts, uppercase tracking, and custom spacing.
 - **Negative Space**: Minimal layout lines, keeping elements apart.
 - **Motion with Purpose**: Scrollspy highlights, topological node paths, and scroll reveals add detail without feeling overwhelming.

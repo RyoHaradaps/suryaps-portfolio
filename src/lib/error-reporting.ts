@@ -4,7 +4,11 @@ type ErrorReportOptions = {
   severity?: "error" | "warning" | "info";
 };
 
-export function reportError(error: unknown, context: Record<string, unknown> = {}, options: ErrorReportOptions = {}) {
+export function reportError(
+  error: unknown,
+  context: Record<string, unknown> = {},
+  options: ErrorReportOptions = {},
+) {
   if (typeof window === "undefined") return;
   // Neutral error reporting hook. Wire up to your own telemetry as needed.
   if (typeof console !== "undefined") {

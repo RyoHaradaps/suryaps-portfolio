@@ -35,3 +35,19 @@ dist-ssr
 test-results/
 playwright-report/
 .playwright/
+
+# Cache and build tools
+.vite/
+.vercel/
+.cache/
+coverage/
+
+# Local envs
+.env
+.env.local
+.env.production
+.env.*
+
+# OS files
+Thumbs.db
+

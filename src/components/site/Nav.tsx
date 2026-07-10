@@ -11,10 +11,12 @@ function getSegmentedPattern(hash: string): string {
   const len = hash.length;
   let w = 14;
   let cap = 8;
-  if (len < 6) { // e.g. "about"
+  if (len < 6) {
+    // e.g. "about"
     w = 10;
     cap = 6;
-  } else if (len > 9) { // e.g. "experience"
+  } else if (len > 9) {
+    // e.g. "experience"
     w = 18;
     cap = 10;
   }
@@ -69,9 +71,9 @@ export function Nav() {
       setActiveId(null);
       return;
     }
-    const els = SECTION_IDS
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => el !== null);
+    const els = SECTION_IDS.map((id) => document.getElementById(id)).filter(
+      (el): el is HTMLElement => el !== null,
+    );
     if (els.length === 0) return;
 
     const visible = new Map<string, number>();
@@ -127,9 +129,11 @@ export function Nav() {
 
   return (
     <header
-      style={{
-        "--capsule-duration": isScrolling ? "1.8s" : "2.2s",
-      } as React.CSSProperties}
+      style={
+        {
+          "--capsule-duration": isScrolling ? "1.8s" : "2.2s",
+        } as React.CSSProperties
+      }
       className={[
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
@@ -148,7 +152,9 @@ export function Nav() {
             draggable={false}
           />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-[15px] font-semibold tracking-[0.35em] text-foreground">PORTFOLIO</span>
+            <span className="font-display text-[15px] font-semibold tracking-[0.35em] text-foreground">
+              PORTFOLIO
+            </span>
             <span className="mt-[4px] font-jp text-[14px] font-medium tracking-[0.18em] text-foreground/85">
               作品集
             </span>
@@ -236,9 +242,9 @@ export function Nav() {
       {open && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <div className="container-page flex flex-col gap-1 py-4">
-          {nav.map((item) => {
-            const isActive = pathname === "/" && activeId === item.hash;
-            return (
+            {nav.map((item) => {
+              const isActive = pathname === "/" && activeId === item.hash;
+              return (
                 <a
                   key={item.hash}
                   href={`/#${item.hash}`}
@@ -257,10 +263,20 @@ export function Nav() {
               );
             })}
             <div className="mt-2 flex gap-2">
-              <a href={site.github} target="_blank" rel="noreferrer" className="btn-base btn-ghost flex-1">
+              <a
+                href={site.github}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-base btn-ghost flex-1"
+              >
                 <Github className="h-4 w-4" /> GitHub
               </a>
-              <a href={site.linkedin} target="_blank" rel="noreferrer" className="btn-base btn-ghost flex-1">
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-base btn-ghost flex-1"
+              >
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
             </div>
