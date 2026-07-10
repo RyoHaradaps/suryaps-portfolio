@@ -114,8 +114,8 @@ export const experience = [
     period: "Nov 2025 — Jun 2026",
     location: "Thrissur",
     bullets: [
-      "Designed AttCM-AlexNet in PyTorch — a custom architecture layering Channel, Spatial, and Self-Attention onto AlexNet for fine-grained leaf disease classification.",
-      "Built the full inference pipeline in Streamlit: 224×224 preprocessing, forward pass, confidence display — all in one flow.",
+      "Designed AttCM-AlexNet in PyTorch, a custom architecture layering Channel, Spatial, and Self-Attention onto AlexNet for fine-grained leaf disease classification.",
+      "Built the full inference pipeline in Streamlit: 224×224 preprocessing, forward pass, confidence display; all in one flow.",
       "Integrated a live weather REST API to generate context-aware remedy suggestions instead of static advisories.",
     ],
     metrics: [
@@ -133,7 +133,7 @@ export const experience = [
     location: "Thrissur",
     bullets: [
       "Built MyMovieList end-to-end in Django + SQLite: auth, sessions, watchlists, ratings, reviews, and a custom profile dashboard.",
-      "Integrated four external APIs simultaneously — TMDB, Jikan, Kitsu, Comic Vine — behind one unified content model for films, series, anime, and comics.",
+      "Integrated four external APIs simultaneously: TMDB, Jikan, Kitsu, Comic Vine; behind one unified content model for films, series, anime, and comics.",
       "Modelled inheritance across media types with Django ORM to keep queries clean as the catalog grew.",
     ],
     metrics: [
