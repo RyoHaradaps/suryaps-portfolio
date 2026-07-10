@@ -338,35 +338,3 @@ export const projects: Project[] = [
     github: "https://github.com/RyoHaradaps/sign-language-detector",
   },
 ];
-
-export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
-
-export const projectNav = (slug: string) => {
-  const i = projects.findIndex((p) => p.slug === slug);
-  return {
-    prev: i > 0 ? projects[i - 1] : projects[projects.length - 1],
-    next: i < projects.length - 1 ? projects[i + 1] : projects[0],
-  };
-};
-
-export const relatedProjects = (slug: string, count = 2) => {
-  const current = getProject(slug);
-  if (!current) return [];
-  return projects
-    .filter((p) => p.slug !== slug)
-    .sort((a, b) => {
-      const aOverlap = a.tags.filter((t) => current.tags.includes(t)).length;
-      const bOverlap = b.tags.filter((t) => current.tags.includes(t)).length;
-      return bOverlap - aOverlap;
-    })
-    .slice(0, count);
-};
-
-export const projectCategories = [
-  "All",
-  "AI",
-  "Computer Vision",
-  "Deep Learning",
-  "Web Development",
-  "Research",
-] as const;

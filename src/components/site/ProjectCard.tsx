@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import type { Project } from "@/lib/projects";
 
 const statusTone: Record<Project["status"], string> = {
@@ -18,40 +17,35 @@ const statusDot: Record<Project["status"], string> = {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card-surface group relative flex h-full flex-col overflow-hidden p-8 md:p-10">
-      <Link
-        to="/projects/$slug"
-        params={{ slug: project.slug }}
-        className="absolute inset-0 z-10"
-        aria-label={`Read case study for ${project.name}`}
-      />
-
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View ${project.name} on GitHub`}
+      className="card-surface group relative flex h-full flex-col overflow-hidden p-8 md:p-10 cursor-pointer"
+    >
       <div className="flex items-center justify-between gap-4">
-        <div className="flex flex-wrap items-center gap-2.5">
-          <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-1.5 sm:gap-2 min-w-0">
+          <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle shrink-0">
             {project.category.toUpperCase()}
           </span>
           <span
-            className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest ${statusTone[project.status]}`}
+            className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest shrink-0 ${statusTone[project.status]}`}
           >
             <span className={`h-1.5 w-1.5 rounded-full ${statusDot[project.status]}`} />
             {project.status.toUpperCase()}
           </span>
-          <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
+          <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle shrink-0">
             {project.difficulty.toUpperCase()}
           </span>
         </div>
 
         {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${project.name} GitHub Repository`}
-            className="relative z-20 grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-secondary transition-colors hover:border-foreground hover:text-foreground"
+          <div
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-secondary transition-colors hover:border-foreground hover:text-foreground"
           >
             <Github className="h-5 w-5" />
-          </a>
+          </div>
         )}
       </div>
 
@@ -70,6 +64,6 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         ))}
       </div>
-    </article>
+    </a>
   );
 }
