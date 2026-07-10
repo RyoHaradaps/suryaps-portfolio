@@ -30,8 +30,7 @@ function Index() {
               <Reveal delay={40} className="mb-6">
                 <div className="inline-flex w-fit max-w-full min-h-9 h-auto items-center gap-2.5 px-0 md:px-0 md:w-auto md:whitespace-nowrap">
                   <span className="availability-breathe h-2.5 w-2.5 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
-                  <span className="text-[12px] font-medium uppercase tracking-[0.2em] text-foreground">
-
+                  <span className="font-dot text-[13px] font-medium uppercase tracking-[0.2em] text-foreground">
                     OPEN TO FULL-TIME • ML ENGINEER • ASSOCIATE DATA SCIENTIST • AI ENGINEER
                   </span>
                 </div>
@@ -168,7 +167,7 @@ function Index() {
                     >
                       <AnimatedCounter value={s.n} suffix={s.suffix} />
                     </div>
-                    <div className="mt-2 text-[12px] uppercase tracking-widest text-subtle">{s.l}</div>
+                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -230,7 +229,7 @@ function Index() {
                     >
                       <AnimatedCounter value={s.n} suffix={s.suffix} />
                     </div>
-                    <div className="mt-2 text-[12px] uppercase tracking-widest text-subtle">{s.l}</div>
+                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -287,7 +286,7 @@ function Index() {
 
                   <div className="grid gap-10 lg:grid-cols-[1fr_220px] lg:gap-12">
                     <div>
-                      <p className="font-dot text-[11px] uppercase tracking-widest text-subtle">{e.period}</p>
+                      <p className="font-dot text-[13px] uppercase tracking-widest text-subtle">{e.period}</p>
                       <h3 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-[-0.01em] text-foreground md:text-4xl">
                         {e.role}
                       </h3>
@@ -310,7 +309,7 @@ function Index() {
                           {e.stack.map((s) => (
                             <li
                               key={s}
-                              className="rounded-full border border-border px-2.5 py-1 text-[12px] text-secondary transition-colors hover:border-foreground hover:text-foreground"
+                              className="rounded-full border border-border px-2.5 py-1 font-dot text-sm text-secondary transition-colors hover:border-foreground hover:text-foreground"
                             >
                               {s}
                             </li>
@@ -327,7 +326,7 @@ function Index() {
                               <div className="font-display text-4xl font-light leading-none tracking-[-0.02em] text-foreground md:text-5xl">
                                 {m.value}
                               </div>
-                              <div className="mt-3 font-dot text-[11px] uppercase tracking-widest text-subtle">
+                              <div className="mt-3 font-dot text-[13px] uppercase tracking-widest text-subtle">
                                 {m.label}
                               </div>
                             </div>
@@ -358,7 +357,7 @@ function Index() {
                       title={[s.years, s.projects ? `${s.projects} projects` : null, s.primary]
                         .filter(Boolean)
                         .join(" · ")}
-                      className="rounded-full border border-border px-3.5 py-2 text-sm text-secondary transition-colors hover:border-foreground hover:text-foreground"
+                      className="rounded-full border border-border px-3.5 py-2 font-dot text-sm text-secondary transition-colors hover:border-foreground hover:text-foreground"
                     >
                       {s.name}
                     </li>

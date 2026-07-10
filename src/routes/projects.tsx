@@ -52,7 +52,7 @@ function ProjectsPage() {
     <>
       <section className="pt-36 md:pt-48">
         <div className="container-page">
-          <p className="font-dot text-xs md:text-sm text-subtle">// INDEX · PROJECTS</p>
+          <p className="font-dot text-sm text-subtle">// INDEX · PROJECTS</p>
           <h1 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-8xl">
             Selected work.
           </h1>
@@ -100,7 +100,7 @@ function ProjectsPage() {
 
         {filtered.length === 0 ? (
           <div className="card-surface p-16 text-center">
-            <p className="font-dot text-xs text-subtle">// NO MATCH</p>
+             <p className="font-dot text-[13px] text-subtle">// NO MATCH</p>
             <h2 className="mt-4 font-display text-2xl">Nothing found.</h2>
             <p className="mt-2 text-sm text-secondary">
               Try a different keyword or clear the filter.

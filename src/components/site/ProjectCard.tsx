@@ -20,16 +20,16 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="card-surface group relative flex h-full flex-col overflow-hidden p-8 md:p-10">
       <div className="flex flex-wrap items-center gap-2.5">
-        <span className="rounded-full border border-border px-2.5 py-1 font-dot text-[11px] tracking-widest text-subtle">
+        <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
           {project.category.toUpperCase()}
         </span>
         <span
-          className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-dot text-[11px] tracking-widest ${statusTone[project.status]}`}
+          className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest ${statusTone[project.status]}`}
         >
           <span className={`h-1.5 w-1.5 rounded-full ${statusDot[project.status]}`} />
           {project.status.toUpperCase()}
         </span>
-        <span className="rounded-full border border-border px-2.5 py-1 font-dot text-[11px] tracking-widest text-subtle">
+        <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
           {project.difficulty.toUpperCase()}
         </span>
       </div>
@@ -43,7 +43,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.stack.map((s) => (
           <span
             key={s}
-            className="rounded-full border border-border px-2.5 py-1 text-[12px] text-secondary"
+            className="rounded-full border border-border px-2.5 py-1 font-dot text-sm text-secondary"
           >
             {s}
           </span>

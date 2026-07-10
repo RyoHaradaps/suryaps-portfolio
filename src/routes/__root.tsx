@@ -21,7 +21,7 @@ function NotFoundComponent() {
     <div className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-background px-4">
       <div className="absolute inset-0 grid-lines opacity-40" aria-hidden />
       <div className="relative max-w-lg text-center">
-        <p className="font-dot text-xs text-subtle">ERR // 0x0404</p>
+        <p className="font-dot text-[13px] text-subtle">ERR // 0x0404</p>
         <h1 className="mt-6 font-display text-[9rem] font-light leading-none text-foreground">
           404
         </h1>
@@ -48,7 +48,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-dvh items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <p className="font-dot text-xs text-subtle">ERR // RUNTIME</p>
+        <p className="font-dot text-[13px] text-subtle">ERR // RUNTIME</p>
         <h1 className="mt-4 font-display text-2xl font-medium text-foreground">
           This page didn't load
         </h1>

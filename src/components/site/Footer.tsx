@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container-page py-20 md:py-28">
         <div className="grid grid-cols-2 gap-y-16 gap-x-12 md:px-8 lg:px-12 md:grid-cols-[2fr_1fr] md:gap-x-16 lg:gap-x-20">
           <div className="col-span-2 md:col-span-1 md:pl-8 lg:pl-20">
-            <p className="font-dot text-[11px] md:text-[12px] tracking-widest text-subtle">// BUILT WITH INTENT</p>
+            <p className="font-dot text-[14px] tracking-widest text-subtle">// BUILT WITH INTENT</p>
             <p className="mt-4 max-w-xl font-display text-[32px] sm:text-[38px] md:text-[44px] leading-[1.15] font-medium text-foreground">
               Engineered with curiosity.
               <br />
@@ -22,7 +22,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-dot text-[11px] md:text-[12px] tracking-widest text-subtle">// ELSEWHERE</p>
+            <p className="font-dot text-[14px] tracking-widest text-subtle">// ELSEWHERE</p>
             <ul className="mt-4 space-y-3 text-[16px] md:text-[18px]">
               <li>
                 <a
@@ -64,7 +64,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-[11px] md:text-[12px] text-subtle md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-[13px] text-subtle md:flex-row md:items-center">
           <span className="font-dot">© {new Date().getFullYear()} — P S SURYANARAYANAN · BENGALURU</span>
           <span className="font-dot self-end md:self-auto">v1.1 · SHIPPED WITH CARE</span>
         </div>

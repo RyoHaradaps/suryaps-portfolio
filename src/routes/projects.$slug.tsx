@@ -27,7 +27,7 @@ export const Route = createFileRoute("/projects/$slug")({
   component: ProjectDetail,
   notFoundComponent: () => (
     <div className="container-page pt-40 pb-24">
-      <p className="font-dot text-xs text-subtle">// 0x0404</p>
+      <p className="font-dot text-[13px] text-subtle">// 0x0404</p>
       <h1 className="mt-6 font-display text-5xl font-light">Project not found.</h1>
       <Link to="/projects" className="btn-base btn-primary mt-8">
         Back to projects
@@ -52,7 +52,7 @@ function ProjectDetail() {
           >
             <ArrowLeft className="h-4 w-4" /> All projects
           </Link>
-          <div className="mt-12 flex items-center justify-between font-dot text-xs md:text-sm text-subtle">
+          <div className="mt-12 flex items-center justify-between font-dot text-[13px] md:text-sm text-subtle">
             <span>CASE · {project.index}</span>
             <span>
               {project.year} · {project.category.toUpperCase()} · {project.status.toUpperCase()}
@@ -116,11 +116,11 @@ function ProjectDetail() {
       <Section eyebrow="// 02 · PROBLEM" title={<>Why it exists.</>}>
         <p className="max-w-3xl text-lg text-secondary md:text-xl">{project.problem}</p>
         <div className="mt-10">
-          <p className="font-dot text-xs md:text-sm text-subtle">OBJECTIVES</p>
+          <p className="font-dot text-sm text-subtle">OBJECTIVES</p>
           <ul className="mt-4 grid gap-3 md:grid-cols-3">
             {project.objectives.map((o, i) => (
               <li key={o} className="card-surface p-8">
-                <div className="font-dot text-xs md:text-sm text-subtle">
+                <div className="font-dot text-[13px] md:text-sm text-subtle">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <p className="mt-3 text-base text-foreground md:text-lg">{o}</p>
@@ -135,11 +135,11 @@ function ProjectDetail() {
           <p className="font-mono text-base text-secondary md:text-lg">{project.architecture}</p>
         </div>
         <div className="mt-10">
-          <p className="font-dot text-xs md:text-sm text-subtle">WORKFLOW</p>
+          <p className="font-dot text-sm text-subtle">WORKFLOW</p>
           <ol className="mt-4 grid gap-3 md:grid-cols-5">
             {project.workflow.map((w, i) => (
               <li key={w} className="card-surface flex flex-col gap-3.5 p-6">
-                <span className="font-dot text-xs md:text-sm text-subtle">
+                <span className="font-dot text-[13px] md:text-sm text-subtle">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-base text-foreground">{w}</span>
@@ -154,13 +154,13 @@ function ProjectDetail() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {project.dataset && (
             <div className="card-surface p-8">
-              <p className="font-dot text-xs md:text-sm text-subtle">DATASET</p>
+              <p className="font-dot text-sm text-subtle">DATASET</p>
               <p className="mt-3 text-foreground text-base md:text-lg">{project.dataset}</p>
             </div>
           )}
           {project.model && (
             <div className="card-surface p-8">
-              <p className="font-dot text-xs md:text-sm text-subtle">MODEL</p>
+              <p className="font-dot text-sm text-subtle">MODEL</p>
               <p className="mt-3 text-foreground text-base md:text-lg">{project.model}</p>
             </div>
           )}
@@ -170,7 +170,7 @@ function ProjectDetail() {
       <Section eyebrow="// 05 · CHALLENGES & SOLUTIONS">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="card-surface p-10">
-            <p className="font-dot text-xs md:text-sm text-subtle">CHALLENGES</p>
+            <p className="font-dot text-sm text-subtle">CHALLENGES</p>
             <ul className="mt-5 space-y-3 text-base md:text-lg">
               {project.challenges.map((c) => (
                 <li key={c} className="flex gap-3 text-secondary">
@@ -180,7 +180,7 @@ function ProjectDetail() {
             </ul>
           </div>
           <div className="card-surface p-10">
-            <p className="font-dot text-xs md:text-sm text-subtle">SOLUTIONS</p>
+            <p className="font-dot text-sm text-subtle">SOLUTIONS</p>
             <ul className="mt-5 space-y-3 text-base md:text-lg">
               {project.solutions.map((s) => (
                 <li key={s} className="flex gap-3 text-foreground">
@@ -210,7 +210,7 @@ function ProjectDetail() {
           <div className="grid gap-6 md:grid-cols-2">
             {project.tradeoffs.map((t) => (
               <div key={t.title} className="card-surface p-10">
-                <p className="font-dot text-xs md:text-sm text-subtle">TRADE-OFF</p>
+                <p className="font-dot text-sm text-subtle">TRADE-OFF</p>
                 <h3 className="mt-3 font-display text-2xl">{t.title}</h3>
                 <p className="mt-3 text-base text-secondary md:text-lg">{t.body}</p>
               </div>
@@ -283,7 +283,7 @@ function ProjectDetail() {
                 params={{ slug: p.slug }}
                 className="card-surface group p-10"
               >
-                <p className="font-dot text-[11px] tracking-widest text-subtle">
+                <p className="font-dot text-[13px] tracking-widest text-subtle">
                   {p.category.toUpperCase()} · {p.status.toUpperCase()}
                 </p>
                 <h3 className="mt-4 font-display text-3xl">{p.name}</h3>
@@ -336,7 +336,7 @@ function ProjectDetail() {
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="font-dot text-xs md:text-sm text-subtle">{label.toUpperCase()}</p>
+      <p className="font-dot text-sm text-subtle">{label.toUpperCase()}</p>
       <p className="mt-3 text-lg text-foreground md:text-xl">{value}</p>
     </div>
   );

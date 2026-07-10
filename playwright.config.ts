@@ -1,7 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
+import * as fs from "fs";
 
 const CHROMIUM_PATH = "/nix/store/2zqa6kavc8znbgrac1l3pix9lwr3w5nj-playwright-chromium/chrome-linux/chrome";
-
+const executablePath = fs.existsSync(CHROMIUM_PATH) ? CHROMIUM_PATH : undefined;
 
 export default defineConfig({
   testDir: "./e2e",
@@ -14,7 +15,7 @@ export default defineConfig({
     baseURL: "http://localhost:8080",
     trace: "on-first-retry",
     launchOptions: {
-      executablePath: CHROMIUM_PATH,
+      executablePath,
       args: ["--no-sandbox"],
     },
   },

@@ -369,7 +369,7 @@ export function AITopology() {
       </svg>
 
       {/* Legend / caption */}
-      <div className="pointer-events-none absolute bottom-2 right-2 font-dot text-[10px] tracking-widest text-subtle">
+      <div className="pointer-events-none absolute bottom-2 right-2 font-dot text-[13px] tracking-widest text-subtle">
         {hover ? `→ ${NODES.find((n) => n.id === hover)?.label.toUpperCase()}` : "TOPOLOGY · LIVE"}
       </div>
     </div>

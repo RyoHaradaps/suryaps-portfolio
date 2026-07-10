@@ -149,7 +149,7 @@ export function Nav() {
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-[15px] font-semibold tracking-[0.35em] text-foreground">PORTFOLIO</span>
-            <span className="mt-[4px] font-jp text-[13px] font-medium tracking-[0.18em] text-foreground/85">
+            <span className="mt-[4px] font-jp text-[14px] font-medium tracking-[0.18em] text-foreground/85">
               作品集
             </span>
           </span>
@@ -199,7 +199,7 @@ export function Nav() {
             href={site.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden h-11 items-center gap-2 rounded-full border border-border px-5 text-[12px] text-subtle transition-colors hover:border-foreground hover:text-foreground md:inline-flex"
+            className="hidden h-11 items-center gap-2 rounded-full border border-border px-5 text-[13px] text-subtle transition-colors hover:border-foreground hover:text-foreground md:inline-flex"
           >
             <Download className="h-4 w-4" />
             <span className="font-dot tracking-widest">RESUME</span>
