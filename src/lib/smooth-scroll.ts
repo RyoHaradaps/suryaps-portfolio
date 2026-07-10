@@ -1,4 +1,4 @@
-const OPTICAL_OFFSET = 4;
+const OPTICAL_OFFSET = 170;
 
 function prefersReducedMotion() {
   if (typeof window === "undefined") return false;
