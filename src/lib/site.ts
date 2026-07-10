@@ -7,7 +7,7 @@ export const site = {
   location: "Bangalore, India",
   github: "https://github.com/RyoHaradaps",
   linkedin: "https://www.linkedin.com/in/pssuryanarayanan/",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/P_S_SURYANARAYANAN_s_resume.pdf",
 } as const;
 
 export type NavItem = {

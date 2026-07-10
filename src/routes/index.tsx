@@ -76,6 +76,8 @@ function Index() {
                   </a>
                   <a
                     href={site.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
                   >
                     <Download className="h-5 w-5" /> Download resume

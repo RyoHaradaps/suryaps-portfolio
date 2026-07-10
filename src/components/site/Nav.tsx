@@ -197,6 +197,8 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <a
             href={site.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden h-11 items-center gap-2 rounded-full border border-border px-5 text-[12px] text-subtle transition-colors hover:border-foreground hover:text-foreground md:inline-flex"
           >
             <Download className="h-4 w-4" />
