@@ -323,7 +323,11 @@ function Index() {
                         <div className="grid grid-cols-3 gap-6 lg:grid-cols-1 lg:gap-12">
                           {e.metrics.map((m) => (
                             <div key={m.label} className="flex flex-col items-center lg:items-end">
-                              <div className="font-display text-4xl font-light leading-none tracking-[-0.02em] text-foreground md:text-5xl">
+                              <div className={cn(
+                                  "font-display font-light leading-none tracking-[-0.02em] text-foreground md:text-5xl",
+                                  m.label === "Export formats"
+                                    ? "text-3xl md:text-4xl whitespace-nowrap"
+                                    : "text-4xl md:text-5xl")}>
                                 {m.value}
                               </div>
                               <div className="mt-3 font-dot text-[13px] uppercase tracking-widest text-subtle">
