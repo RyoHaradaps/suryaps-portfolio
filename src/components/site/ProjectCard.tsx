@@ -26,19 +26,33 @@ export function ProjectCard({ project }: { project: Project }) {
         aria-label={`Read case study for ${project.name}`}
       />
 
-      <div className="flex flex-wrap items-center gap-2.5">
-        <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
-          {project.category.toUpperCase()}
-        </span>
-        <span
-          className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest ${statusTone[project.status]}`}
-        >
-          <span className={`h-1.5 w-1.5 rounded-full ${statusDot[project.status]}`} />
-          {project.status.toUpperCase()}
-        </span>
-        <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
-          {project.difficulty.toUpperCase()}
-        </span>
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
+            {project.category.toUpperCase()}
+          </span>
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest ${statusTone[project.status]}`}
+          >
+            <span className={`h-1.5 w-1.5 rounded-full ${statusDot[project.status]}`} />
+            {project.status.toUpperCase()}
+          </span>
+          <span className="rounded-full border border-border px-2.5 py-1 font-dot text-sm tracking-widest text-subtle">
+            {project.difficulty.toUpperCase()}
+          </span>
+        </div>
+
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${project.name} GitHub Repository`}
+            className="relative z-20 grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-secondary transition-colors hover:border-foreground hover:text-foreground"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+        )}
       </div>
 
       <h3 className="mt-8 font-display text-3xl font-medium leading-[1.05] md:text-[2rem]">
@@ -55,20 +69,6 @@ export function ProjectCard({ project }: { project: Project }) {
             {s}
           </span>
         ))}
-      </div>
-
-      <div className="mt-auto flex items-center justify-end pt-8">
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${project.name} GitHub Repository`}
-            className="relative z-20 grid h-10 w-10 place-items-center rounded-full border border-border text-secondary hover:border-foreground hover:text-foreground"
-          >
-            <Github className="h-5 w-5" />
-          </a>
-        )}
       </div>
     </article>
   );
