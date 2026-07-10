@@ -1,5 +1,3 @@
-const OPTICAL_OFFSET = 170;
-
 function prefersReducedMotion() {
   if (typeof window === "undefined") return false;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -21,6 +19,9 @@ export function smoothScrollToId(id: string, updateUrl = true) {
 
   const nav = document.querySelector("header");
   const navHeight = nav?.getBoundingClientRect().height ?? 72;
+
+  // Visual alignment so section content starts at the desired position.
+  const OPTICAL_OFFSET = 170;
 
   const targetY = Math.max(
     0,
