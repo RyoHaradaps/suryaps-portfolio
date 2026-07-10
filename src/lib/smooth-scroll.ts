@@ -1,4 +1,4 @@
-const EXTRA_SPACING = 28;
+const OPTICAL_OFFSET = 4;
 
 function prefersReducedMotion() {
   if (typeof window === "undefined") return false;
@@ -26,8 +26,8 @@ export function smoothScrollToId(id: string, updateUrl = true) {
     0,
     el.getBoundingClientRect().top +
       window.scrollY -
-      navHeight -
-      EXTRA_SPACING,
+      navHeight +
+      OPTICAL_OFFSET,
   );
 
   if (updateUrl) {
