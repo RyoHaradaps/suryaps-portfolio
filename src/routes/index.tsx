@@ -344,10 +344,10 @@ function Index() {
 
       {/* SKILLS */}
       <Section id="skills" eyebrow="// 04 · STACK" title={<>Tools I reach for.</>}>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {skillGroups.map((g, gi) => (
             <Reveal key={g.label} delay={gi * 40}>
-              <div className="card-surface h-full p-8">
+              <div className="card-surface h-full p-9 min-h-[280px]">
                 <h3 className="font-display text-xl font-medium">{g.label}</h3>
                 <p className="mt-1 text-sm text-subtle">{g.caption}</p>
                 <ul className="mt-5 flex flex-wrap gap-1.5">
