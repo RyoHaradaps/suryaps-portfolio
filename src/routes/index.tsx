@@ -126,8 +126,7 @@ function Index() {
         eyebrow="// 01 · ABOUT"
         title={
           <>
-            Engineering first. Design aware.
-            Curious by default.
+            Engineering first. Design aware. Curious by default.
           </>
         }
       >
