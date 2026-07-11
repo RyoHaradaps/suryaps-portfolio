@@ -21,7 +21,7 @@ export function smoothScrollToId(id: string, updateUrl = true) {
   const navHeight = nav?.getBoundingClientRect().height ?? 72;
 
   // Visual alignment so section content starts at the desired position.
-  const OPTICAL_OFFSET = 170;
+  const OPTICAL_OFFSET = 140;
 
   const targetY = Math.max(
     0,
