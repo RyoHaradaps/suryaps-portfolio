@@ -23,7 +23,7 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-24 pb-24 md:pt-28 md:pb-44">
+      <section className="relative overflow-hidden pt-8 pb-8 md:pt-0 md:pb-44">
         <div className="absolute inset-0 grid-lines opacity-30" aria-hidden />
         <div className="container-page max-w-[1360px] relative">
           <div className="mt-8 grid gap-12 md:grid-cols-[minmax(0,1.1fr)_1fr] md:items-center md:gap-16 lg:gap-20">
