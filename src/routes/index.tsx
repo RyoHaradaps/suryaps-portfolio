@@ -168,14 +168,14 @@ function Index() {
                 people who care about the last ten percent as much as the first ninety.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-2 sm:flex sm:items-start sm:justify-between sm:gap-0">
+              <div className="grid grid-cols-2 gap-4 pt-4 sm:grid sm:grid-cols-4 sm:gap-8">
                 {[
                   { n: 4, l: "Projects Shipped", suffix: "" },
                   { n: 3, l: "Industry Internships", suffix: "" },
                   { n: 100, l: "Development Hours", suffix: "+" },
                   { n: "∞", l: "Curiosity", suffix: "" },
                 ].map((s) => (
-                  <div key={s.l} className="border-t border-border pt-4 text-center">
+                  <div key={s.l} className="flex-1 border-t border-border pt-4 text-center">
                     <div
                       className={cn(
                         "font-dot justify-center text-foreground",
