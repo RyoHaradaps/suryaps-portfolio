@@ -148,7 +148,7 @@ function Index() {
           </Reveal>
 
           <Reveal delay={120} className="h-full">
-            <div className="flex h-full flex-col justify-between space-y-2 text-justify text-lg text-secondary md:text-xl md:leading-relaxed">
+            <div className="flex h-full flex-col justify-between space-y-4 text-justify text-lg text-secondary md:text-xl md:leading-relaxed">
               <p>
                 I got into engineering the same way most people get into anything worth doing:
                 curiosity that outgrew the tutorials. Somewhere between building small tools and
@@ -170,14 +170,14 @@ function Index() {
                 people who care about the last ten percent as much as the first ninety.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-0 sm:flex sm:items-start sm:justify-between sm:gap-0">
+              <div className="grid grid-cols-2 gap-4 pt-2 sm:flex sm:items-start sm:justify-between sm:gap-0">
                 {[
                   { n: 4, l: "Projects Shipped", suffix: "" },
                   { n: 3, l: "Industry Internships", suffix: "" },
                   { n: 100, l: "Development Hours", suffix: "+" },
                   { n: "∞", l: "Curiosity", suffix: "" },
                 ].map((s) => (
-                  <div key={s.l} className="border-t border-border pt-0 text-center">
+                  <div key={s.l} className="border-t border-border pt-4 text-center">
                     <div
                       className={cn(
                         "font-dot justify-center text-foreground",
