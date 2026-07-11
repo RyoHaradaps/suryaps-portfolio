@@ -127,7 +127,6 @@ function Index() {
         title={
           <>
             Engineering first. Design aware.
-            <br />
             Curious by default.
           </>
         }
