@@ -7,7 +7,7 @@
 /* Anchor scroll offset so section headings clear the fixed navbar. */
 section[id],
 footer[id] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 6rem;
 }
 
 /* Subtle arrival highlight after smooth scrolling to a section. */
@@ -142,6 +142,7 @@ footer[id] {
   }
 
   html {
+    font-size: 85%;
     scroll-behavior: smooth;
   }
 }

@@ -96,7 +96,7 @@ export function Nav() {
         }
         setActiveId(bestId);
       },
-      { rootMargin: "-96px 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+      { rootMargin: "-82px 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -141,7 +141,7 @@ export function Nav() {
           : "bg-transparent border-b border-transparent",
       ].join(" ")}
     >
-      <div className="container-page flex h-[72px] items-center justify-between">
+      <div className="container-page flex h-[4.5rem] items-center justify-between">
         <Link to="/" className="group flex items-center gap-2" aria-label="Portfolio home">
           <img
             src={ensoAsset}
@@ -152,16 +152,16 @@ export function Nav() {
             draggable={false}
           />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-[15px] font-semibold tracking-[0.35em] text-foreground">
+            <span className="font-display text-[0.9375rem] font-semibold tracking-[0.35em] text-foreground">
               PORTFOLIO
             </span>
-            <span className="mt-[4px] font-jp text-[14px] font-medium tracking-[0.18em] text-foreground/85">
+            <span className="mt-[4px] font-jp text-[0.875rem] font-medium tracking-[0.18em] text-foreground/85">
               作品集
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-3.5 md:flex md:mx-10">
+        <nav className="hidden items-center gap-3.5 md:flex md:mx-[2.5rem]">
           {nav.map((item) => {
             const isActive = pathname === "/" && delayedActiveId === item.hash;
             return (
@@ -174,7 +174,7 @@ export function Nav() {
                 }}
                 data-active={isActive ? "true" : undefined}
                 className={[
-                  "group relative rounded-full px-3.5 py-1.5 text-[15px] font-medium transition-colors hover:text-foreground",
+                  "group relative rounded-full px-3.5 py-1.5 text-[0.9375rem] font-medium transition-colors hover:text-foreground",
                   isActive ? "text-foreground" : "text-foreground/90",
                 ].join(" ")}
               >
@@ -205,7 +205,7 @@ export function Nav() {
             href={site.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden h-11 items-center gap-2 rounded-full border border-border px-5 text-[13px] text-subtle transition-colors hover:border-foreground hover:text-foreground md:inline-flex"
+            className="hidden h-11 items-center gap-2 rounded-full border border-border px-[1.25rem] text-[0.8125rem] text-subtle transition-colors hover:border-foreground hover:text-foreground md:inline-flex"
           >
             <Download className="h-4 w-4" />
             <span className="font-dot tracking-widest">RESUME</span>

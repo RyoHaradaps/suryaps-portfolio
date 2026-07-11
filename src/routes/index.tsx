@@ -34,21 +34,21 @@ function Index() {
                     className="availability-breathe h-2.5 w-2.5 shrink-0 rounded-full bg-foreground"
                     aria-hidden="true"
                   />
-                  <span className="font-dot text-[14px] md:text-[15px] font-medium uppercase tracking-[0.18em] text-foreground">
+                  <span className="font-dot text-[0.875rem] md:text-[0.9375rem] font-medium uppercase tracking-[0.18em] text-foreground">
                     OPEN TO FULL-TIME • ML ENGINEER • ASSOCIATE DATA SCIENTIST • AI ENGINEER
                   </span>
                 </div>
               </Reveal>
 
               <Reveal delay={80}>
-                <h1 className="font-display text-[14vw] font-light leading-[0.95] tracking-[-0.04em] sm:text-[11vw] md:text-[7.5rem] lg:text-[9.5rem]">
+                <h1 className="font-display text-[13.3vw] font-light leading-[0.95] tracking-[-0.04em] sm:text-[10.45vw] md:text-[7.125rem] lg:text-[9.025rem]">
                   Hi. <span className="text-subtle">I'm</span> <br className="hidden md:block" />
                   Surya<span className="animate-blink text-foreground">_</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={160}>
-                <p className="mt-10 max-w-2xl text-justify text-lg sm:text-xl md:text-2xl md:leading-relaxed text-white/[0.65] lg:text-left">
+                <p className="mt-10 max-w-2xl text-justify text-[1.06875rem] sm:text-[1.1875rem] md:text-[1.425rem] md:leading-relaxed text-white/[0.65] lg:text-left">
                   <span className="text-white/[0.65]">I build </span>
                   <span className="text-white">functional AI systems</span>
                   <span className="text-white/[0.65]"> from custom attention models to </span>
@@ -71,7 +71,7 @@ function Index() {
                       e.preventDefault();
                       smoothScrollToId("projects");
                     }}
-                    className="btn-base btn-primary text-base px-6 h-12 gap-2.5 transform hover:scale-[1.02] transition-transform duration-300"
+                    className="btn-base btn-primary text-[0.96rem] px-[1.44rem] h-[2.88rem] gap-[0.6rem] transform hover:scale-[1.02] transition-transform duration-300"
                   >
                     View projects <ArrowUpRight className="h-5 w-5" />
                   </a>
@@ -79,7 +79,7 @@ function Index() {
                     href={site.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
+                    className="btn-base btn-ghost md:hidden text-[0.96rem] px-[1.44rem] h-[2.88rem] gap-[0.6rem]"
                   >
                     <Linkedin className="h-5 w-5" /> LinkedIn
                   </a>
@@ -87,7 +87,7 @@ function Index() {
                     href={site.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
+                    className="btn-base btn-ghost md:hidden text-[0.96rem] px-[1.44rem] h-[2.88rem] gap-[0.6rem]"
                   >
                     <Download className="h-5 w-5" /> Download resume
                   </a>
@@ -95,7 +95,7 @@ function Index() {
                     href={site.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-base btn-ghost md:hidden text-base px-6 h-12 gap-2.5"
+                    className="btn-base btn-ghost md:hidden text-[0.96rem] px-[1.44rem] h-[2.88rem] gap-[0.6rem]"
                   >
                     <Github className="h-5 w-5" /> GitHub
                   </a>
@@ -104,7 +104,7 @@ function Index() {
             </div>
 
             <Reveal delay={200} className="hidden md:block">
-              <div className="relative w-full h-full min-h-[480px] md:min-h-[640px] lg:min-h-[700px]">
+              <div className="relative w-full h-full min-h-[30rem] md:min-h-[40rem] lg:min-h-[43.75rem]">
                 <AITopology />
               </div>
             </Reveal>
@@ -188,7 +188,7 @@ function Index() {
                     >
                       <AnimatedCounter value={s.n} suffix={s.suffix} />
                     </div>
-                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">
+                    <div className="mt-2 font-dot text-[0.8125rem] uppercase tracking-[0.12em] text-subtle">
                       {s.l}
                     </div>
                   </div>
@@ -253,7 +253,7 @@ function Index() {
                     >
                       <AnimatedCounter value={s.n} suffix={s.suffix} />
                     </div>
-                    <div className="mt-2 font-dot text-[13px] uppercase tracking-[0.12em] text-subtle">
+                    <div className="mt-2 font-dot text-[0.8125rem] uppercase tracking-[0.12em] text-subtle">
                       {s.l}
                     </div>
                   </div>
@@ -297,7 +297,7 @@ function Index() {
               <Reveal key={e.company} delay={i * 80} className="mb-28 last:mb-0 md:mb-[96px]">
                 <li className="group relative pl-12 md:pl-16">
                   <span
-                    className="absolute left-0 top-1.5 grid h-5 w-5 place-items-center rounded-full border border-border bg-background transition-colors duration-200 group-hover:border-foreground md:h-[22px] md:w-[22px]"
+                    className="absolute left-0 top-1.5 grid h-5 w-5 place-items-center rounded-full border border-border bg-background transition-colors duration-200 group-hover:border-foreground md:h-[1.375rem] md:w-[1.375rem]"
                     aria-hidden
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-foreground/70 transition-colors duration-200 group-hover:bg-foreground" />
@@ -357,7 +357,7 @@ function Index() {
                               >
                                 {m.value}
                               </div>
-                              <div className="mt-3 font-dot text-[13px] uppercase tracking-widest text-subtle">
+                              <div className="mt-3 font-dot text-[0.8125rem] uppercase tracking-widest text-subtle">
                                 {m.label}
                               </div>
                             </div>
