@@ -148,7 +148,7 @@ function Index() {
           </Reveal>
 
           <Reveal delay={120} className="h-full">
-            <div className="flex h-full flex-col justify-between space-y-6 text-justify text-lg text-secondary md:text-xl md:leading-relaxed">
+            <div className="flex h-full flex-col justify-between space-y-2 text-justify text-lg text-secondary md:text-xl md:leading-relaxed">
               <p>
                 I got into engineering the same way most people get into anything worth doing:
                 curiosity that outgrew the tutorials. Somewhere between building small tools and
